@@ -38,7 +38,8 @@ repos:
           .*\.rds|
           .*\.Rds|
           .*\.sh|
-          .*\.RData
+          .*\.RData|
+          renv.lock
           )$
       - id: lintr
       - id: readme-rmd-rendered
