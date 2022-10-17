@@ -12,6 +12,8 @@ BugReports: https://github.com/insightsengineering/sasr/issues
 Depends:
     R (>= 3.6)
 Imports:
+    reticulate,
+    checkmate,
     stringr
 Suggests:
     knitr,
