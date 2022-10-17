@@ -31,3 +31,5 @@ coverage.*
 node_modules/
 package-lock.json
 package.json
+__pycache__
+sascfg_personal.py

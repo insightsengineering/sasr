@@ -1,3 +1,3 @@
 # sasr
 
-Short description of the package
+This package provides interface to SAS through `saspy` and `reticulate`.
