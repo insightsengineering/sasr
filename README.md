@@ -40,13 +40,13 @@ After the installation completes, you are ready to use `sasr` package.
 To use `sasr`, you need to follow these steps
 
 1. Configure your SAS server in `sascfg_personal.py` under your working directory. This is the default file that `sasr` will look at.
-    1. If you don't know how to create this file, use `sascfg()` to create the file. Reuqired arguments include `host` and `sas`.
+    1. If you don't know how to create this file, use `sascfg()` to create the file. Required arguments include `host` and `sas`.
         1. `sascfg()` only creates ssh based SAS session.
         1. Only password-less ssh connection is supported, e.g. ssh via public keys.
         1. `host` is the hostname of the SAS server.
         1. `sas` is the SAS executable path on the SAS server.
         1. Other arguments are added to the configuration file directly.
-        1. `tunnel` and `rtunnel` are reuqired if you want to transfer datasets between R and SAS. Use integers like `tunnel = 9999L` in R, or modify sascfg_personal.py to make sure they are integers.
+        1. `tunnel` and `rtunnel` are required if you want to transfer datasets between R and SAS. Use integers like `tunnel = 9999L` in R, or modify `sascfg_personal.py` to make sure they are integers.
     1. You can create the configuration by yourself and then SAS connection will not be restricted to ssh.
     1. You can have multiple configuration files with different file names
 1. Create the SAS session based on the configuration file
