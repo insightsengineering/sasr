@@ -6,13 +6,14 @@
 #' @param encoding (`character`)\cr encoding of the SAS session
 #' @param ... additional arguments
 #' @param sascfg (`character`)\cr target file of configuration
+#' @export
 #' @details
 #' `host` and `sas` are required to connect to remote SAS server. Other arguments can follow default.
 #' If transferring datasets is needed, then tunnelling is required.
 #' Use `tunnel = `, `rtunnel = ` to specify tunnels and reverse tunnels.
 #' The values should be length 1 integer.
-sascfg <- function(name = "default", host, sas, ssh = system("which ssh", intern = TRUE), encoding = "latin1", ..., sascfg = "sascfg_personal.py") {
-  lst <- list(host = host, sas = sas, ssh = ssh, encoding = encoding)
+sascfg <- function(name = "default", host, sas, ssh = system("which ssh", intern = TRUE), encoding = "latin1", options = list("-fullstimer"), ..., sascfg = "sascfg_personal.py") {
+  lst <- list(host = host, sas = sas, ssh = ssh, encoding = encoding, options = options)
   lst <- c(lst, list(...))
   check_list(lst, types = c("character", "integer"), names = "named")
   f <- file(sascfg, "w")
