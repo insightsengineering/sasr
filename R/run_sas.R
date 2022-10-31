@@ -3,6 +3,7 @@
 #' @param results (`character`)\cr sas code execution results type
 #' @param sas_session (`saspy.sasbase.SASsession`) SAS session
 #' @return a list with name `LST` and `LOG`.
+#' @export
 #' @details `run_sas` will run sas code through SAS session.
 #' The results is a named list of `LST` and `LOG`.
 #' The result part will be stored in `LST`, and log will be stored in `LOG`.
@@ -18,6 +19,7 @@ run_sas <- function(sas_code, results = c("TEXT", "HTML"), sas_session = get_sas
 #' @param table (`character`)\cr table name in SAS.
 #' @param libref (`character`)\cr library name in SAS.
 #' @param sas_session (`saspy.sasbase.SASsession`) SAS session
+#' @export
 df2sd <- function(df, table = "_df", libref = "", ..., sas_session = get_sas_session()) {
   validate_ssh_with_tunnel(sas_session)
   validate_data_names(df)
@@ -28,6 +30,7 @@ df2sd <- function(df, table = "_df", libref = "", ..., sas_session = get_sas_ses
 #' @param table (`character`)\cr table name in SAS.
 #' @param libref (`character`)\cr library name in SAS.
 #' @param sas_session (`saspy.sasbase.SASsession`) SAS session
+#' @export
 sd2df <- function(table, libref = "", ..., sas_session = get_sas_session()) {
   validate_ssh_with_tunnel(sas_session)
   sas_session$sd2df(table = table, libref = libref, ...)
