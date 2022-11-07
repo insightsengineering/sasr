@@ -1,5 +1,9 @@
 # sasr
 
+<!-- start badges -->
+[![Code Coverage](https://raw.githubusercontent.com/insightsengineering/sasr/_xml_coverage_reports/data/main/badge.svg)](https://raw.githubusercontent.com/insightsengineering/sasr/_xml_coverage_reports/data/main/coverage.xml)
+<!-- end badges -->
+
 This package provides interface to SAS through `saspy` and `reticulate`.
 
 ## Pre-requistes
