@@ -1,18 +1,27 @@
 #' install `saspy` module
-#' @param method method to install `saspy`
-#' @param conda whether to use conda
+#' @param method (`character`)\cr method to install `saspy`.
+#' @param conda (`character`)\cr path to `conda` executable.
 #' @export
 install_saspy <- function(method = "auto", conda = "auto") {
+  warning(
+    "Before installing saspy, please read and confirm that you will ",
+    "comply to the lincense of saspy:\n",
+    "https://github.com/sassoftware/saspy/blob/main/LICENSE.md"
+  )
+  accept <- askYesNo("I have read the license and confirm that I will comply to the lincense:")
+  if (!identical(accept, TRUE)) {
+    stop("Installation of saspy cancelled.")
+  }
   reticulate::py_install("saspy", method = method, conda = conda)
 }
 
 #' validate the SAS ssh session is using tunnels
-#' @param session SAS session
-#' @param msg (`character`)\cr message to display
+#' @param session (`saspy.sasbase.SASsession`) SAS session.
+#' @param msg (`character`)\cr message to display.
 validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh must use tunnels to transfer datasets!") {
   cfgname <- session$sascfg$SAScfg$SAS_config_names[1]
   cfg <- session$sascfg$SAScfg[[cfgname]]
-  if(is.null(cfg$tunnel)|is.null(cfg$rtunnel)) {
+  if( is.null(cfg$tunnel) | is.null(cfg$rtunnel) ) {
     stop(msg)
   }
 }
@@ -34,8 +43,8 @@ validate_data_names <- function(data) {
 }
 #' validate sas configuration file is valid
 #' @param sascfg (`character`)\cr file path of configuration.
-#' @details 
-#' Currently, on the file existence check is conducted and the rest
+#' @details
+#' Currently, only the file existence check is conducted and the rest
 #' is checked at python side.
 validate_sascfg <- function(sascfg) {
   if (!file.exists(sascfg)) {
