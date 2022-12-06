@@ -7,9 +7,9 @@
 install_saspy(method = "auto", conda = "auto")
 }
 \arguments{
-\item{method}{method to install \code{saspy}}
+\item{method}{(\code{character})\cr method to install \code{saspy}.}
 
-\item{conda}{whether to use conda}
+\item{conda}{(\code{character})\cr path to \code{conda} executable.}
 }
 \description{
 install \code{saspy} module

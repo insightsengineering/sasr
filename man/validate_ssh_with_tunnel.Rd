@@ -10,9 +10,9 @@ validate_ssh_with_tunnel(
 )
 }
 \arguments{
-\item{session}{SAS session}
+\item{session}{(\code{saspy.sasbase.SASsession}) SAS session.}
 
-\item{msg}{(\code{character})\cr message to display}
+\item{msg}{(\code{character})\cr message to display.}
 }
 \description{
 validate the SAS ssh session is using tunnels
