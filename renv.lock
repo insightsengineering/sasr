@@ -163,13 +163,7 @@
       "Package": "desc",
       "Version": "1.4.2",
       "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "6b9602c7ebbe87101a9c8edb6e8b6d21",
-      "Requirements": [
-        "R6",
-        "cli",
-        "rprojroot"
-      ]
+      "Requirements": []
     },
     "diffobj": {
       "Package": "diffobj",
@@ -356,6 +350,12 @@
         "glue",
         "rlang"
       ]
+    },
+    "lintr": {
+      "Package": "lintr",
+      "Version": "3.0.2",
+      "Source": "Repository",
+      "Requirements": []
     },
     "magrittr": {
       "Package": "magrittr",
@@ -632,6 +632,12 @@
         "magrittr",
         "stringi"
       ]
+    },
+    "styler": {
+      "Package": "styler",
+      "Version": "1.8.1",
+      "Source": "Repository",
+      "Requirements": []
     },
     "sys": {
       "Package": "sys",
