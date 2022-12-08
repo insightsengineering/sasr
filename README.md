@@ -6,7 +6,7 @@
 
 This package provides interface to SAS through `saspy` and `reticulate`.
 
-## Pre-requistes
+## Prerequisites
 
 To use `sasr`, you need to make sure you have the following
 
