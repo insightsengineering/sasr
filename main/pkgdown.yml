@@ -1,9 +1,8 @@
 pandoc: 2.19.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
-articles:
-  hello: hello.html
-last_built: 2022-10-13T13:12Z
+articles: {}
+last_built: 2022-12-09T07:26Z
 urls:
   reference: https://insightsengineering.github.io/sasr/main/reference
   article: https://insightsengineering.github.io/sasr/main/articles

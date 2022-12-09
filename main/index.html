@@ -43,21 +43,9 @@
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
 </li>
-<li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
-  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="articles/hello.html">Hello</a>
-  </div>
-</li>
 <li class="nav-item">
   <a class="nav-link" href="news/index.html">Changelog</a>
 </li>
-<!-- start dropdown for versions --> <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle"
-          data-bs-toggle="dropdown" role="button"
-          aria-expanded="false" aria-haspopup="true"
-          id="dropdown-versions">Versions</a> <div class="dropdown-menu" aria-labelledby="dropdown-versions"> <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/main">main</a> </div></li>
-<!-- end dropdown for versions -->
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -80,7 +68,110 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="sasr">sasr<a class="anchor" aria-label="anchor" href="#sasr"></a>
 </h1></div>
-<p>Short description of the package</p>
+<!-- start badges -->
+
+<p>This package provides interface to SAS through <code>saspy</code> and <code>reticulate</code>.</p>
+<div class="section level2">
+<h2 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
+</h2>
+<p>To use <code>sasr</code>, you need to make sure you have the following</p>
+<ol style="list-style-type: decimal">
+<li>An SAS server that is accessible from the machine that you want to run <code>sasr</code> on</li>
+<li>The machine that you want to run <code>sasr</code> has Python and Java</li>
+</ol>
+</div>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>To install <code>sasr</code>, please use the following command</p>
+<pre class="{r}"><code><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span>repo <span class="op">=</span> <span class="st">'insightsengineering/sasr'</span><span class="op">)</span></span></code></pre>
+<p>Reticulate will be installed automatically, but Python package <code>saspy</code> will not.</p>
+<p>If you do not have Python, you can use the following code to install Python, or it can be installed automatically after you call some python related stuffs.</p>
+<pre class="{r}"><code><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/reticulate/" class="external-link">reticulate</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/install_python.html" class="external-link">install_python</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<p>To install <code>saspy</code>, use the following code</p>
+<pre class="{r}"><code><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/insightsengineering/sasr/" class="external-link">sasr</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/install_saspy.html">install_saspy</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<p>After the installation completes, you are ready to use <code>sasr</code> package.</p>
+</div>
+<div class="section level2">
+<h2 id="short-tutorial">Short Tutorial<a class="anchor" aria-label="anchor" href="#short-tutorial"></a>
+</h2>
+<p>To use <code>sasr</code>, you need to follow these steps</p>
+<ol style="list-style-type: decimal">
+<li>Configure your SAS server in <code>sascfg_personal.py</code> under your working directory. This is the default file that <code>sasr</code> will look at.
+<ol style="list-style-type: decimal">
+<li>If you don’t know how to create this file, use <code><a href="reference/sascfg.html">sascfg()</a></code> to create the file. Required arguments include <code>host</code> and <code>sas</code>.
+<ol style="list-style-type: decimal">
+<li>
+<code><a href="reference/sascfg.html">sascfg()</a></code> only creates ssh based SAS session.</li>
+<li>Only password-less ssh connection is supported, e.g. ssh via public keys.</li>
+<li>
+<code>host</code> is the hostname of the SAS server.</li>
+<li>
+<code>sas</code> is the SAS executable path on the SAS server.</li>
+<li>Other arguments are added to the configuration file directly.</li>
+<li>
+<code>tunnel</code> and <code>rtunnel</code> are required if you want to transfer datasets between R and SAS. Use integers like <code>tunnel = 9999L</code> in R, or modify <code>sascfg_personal.py</code> to make sure they are integers.</li>
+</ol>
+</li>
+<li>You can create the configuration by yourself and then SAS connection will not be restricted to ssh.</li>
+<li>You can have multiple configuration files with different file names</li>
+</ol>
+</li>
+<li>Create the SAS session based on the configuration file
+<ol style="list-style-type: decimal">
+<li>To use the default connection in <code>sascfg_personal.py</code>, you can run any command like <code>run_sas</code>, <code>df2sd</code> or <code>sd2df</code>.
+<ol style="list-style-type: decimal">
+<li>The session will be created if there is no session available stored in <code>.sasr_env$.sas_session</code>
+</li>
+<li>If <code>.sasr_env$.sas_session</code> is created, this session will be used by default.</li>
+<li>Do not create any variable called <code>.sas_session</code> in environment <code>sasr:::.sasr_env</code>
+</li>
+</ol>
+</li>
+<li>To create the session manually, you can call <code><a href="reference/sas_session_ssh.html">sas_session_ssh()</a></code>
+<ol style="list-style-type: decimal">
+<li>
+<code>SAS_session</code> have one argument <code>sascfg</code>, pointing to the SAS session configuration file.</li>
+</ol>
+</li>
+<li>To use multiple sessions, you need to store the session <code>your_session &lt;- sas_session_ssh(sascfg)</code>
+</li>
+</ol>
+</li>
+<li>Transfer the datasets from R to SAS using <code>df2sd</code>
+<ol style="list-style-type: decimal">
+<li>Tunneling must be enabled to transfer datasets.</li>
+<li>The variable names of the datasets should not contain dots otherwise SAS may not recognize.</li>
+<li>The index (row names) will not be transferred to SAS.</li>
+</ol>
+</li>
+<li>Use <code>run_sas</code> to submit SAS code to the SAS server.
+<ol style="list-style-type: decimal">
+<li>The returned value is a named list, <code>LST</code> is the result and <code>LOG</code> is the log file</li>
+<li>
+<code>run_sas</code> has argument <code>results=</code>, it can be either “TEXT” or “HTML”. This argument decides the LST format.</li>
+</ol>
+</li>
+<li>Transfer SAS datasets back to R use <code>sd2df</code>
+</li>
+</ol>
+<div class="section level3">
+<h3 id="short-example">Short Example<a class="anchor" aria-label="anchor" href="#short-example"></a>
+</h3>
+<pre class="{r}"><code><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/insightsengineering/sasr/" class="external-link">sasr</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/df2sd.html">df2sd</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="st">"mt"</span><span class="op">)</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/run_sas.html">run_sas</a></span><span class="op">(</span><span class="st">"</span></span>
+<span><span class="st">  proc freq data = mt;</span></span>
+<span><span class="st">  run;</span></span>
+<span><span class="st">"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">LOG</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">LST</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
 </div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
@@ -113,7 +204,12 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://raw.githubusercontent.com/insightsengineering/sasr/_xml_coverage_reports/data/main/coverage.xml" class="external-link"><img src="https://raw.githubusercontent.com/insightsengineering/sasr/_xml_coverage_reports/data/main/badge.svg" alt="Code Coverage"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
