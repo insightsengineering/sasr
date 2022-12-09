@@ -23,7 +23,7 @@ install_saspy <- function(method = "auto", conda = "auto") {
 #' @param session (`saspy.sasbase.SASsession`) SAS session.
 #' @param msg (`character`)\cr message to display.
 #'
-#' @description SAS session must enable tunnles to transfer datasets. If not used, a error will pop up.
+#' @description SAS session must enable tunnels to transfer datasets. If not used, a error will pop up.
 #'
 #' @keywords internal
 validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh must use tunnels to transfer datasets!") {

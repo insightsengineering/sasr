@@ -15,6 +15,6 @@ validate_ssh_with_tunnel(
 \item{msg}{(\code{character})\cr message to display.}
 }
 \description{
-SAS session must enable tunnles to transfer datasets. If not used, a error will pop up.
+SAS session must enable tunnels to transfer datasets. If not used, a error will pop up.
 }
 \keyword{internal}
