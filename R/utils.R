@@ -9,7 +9,7 @@ install_saspy <- function(method = "auto", conda = "auto") {
     "Before installing saspy, please read and confirm that you will ",
     "comply to the lincense of saspy:\n",
     "https://github.com/sassoftware/saspy/blob/main/LICENSE.md\n",
-    "I have read the license and confirm that I will comply to the lincense:"
+    "I have read the license and confirm that I will comply to the license:"
   )
   accept <- askYesNo(msg)
   if (!identical(accept, TRUE)) {
