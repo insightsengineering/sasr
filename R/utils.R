@@ -25,8 +25,11 @@ validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh mus
     stop(msg)
   }
 }
-#' validate data frame names are valid in SAS
-#' @param (`data.frame`)\cr data.frame to be checked
+
+#' Validate data frame names are valid in SAS
+#'
+#' @param data (`data.frame`)\cr data.frame to be checked.
+#'
 #' @details
 #' In SAS, the variable names should be consist of letters, numbers and underscore.
 #' Other characters are not allowed.
@@ -60,17 +63,17 @@ validate_sascfg <- function(sascfg) {
 #' of function oriented programming instead of object oriented programmings
 #' @export
 get_sas_session <- function() {
-  if (is.null(sasr_env$.sas_session)) {
-    sasr_env$.sas_session <- sas_session_ssh(sascfg = "sascfg_personal.py")
+  if (is.null(.sasr_env$.sas_session)) {
+    .sasr_env$.sas_session <- sas_session_ssh(sascfg = "sascfg_personal.py")
   }
-  if (is.null(sasr_env$.sas_session)) {
+  if (is.null(.sasr_env$.sas_session)) {
     stop(
       "SAS session not established! Please review the python part and update ",
       "sascfg_personal.py accordingly.\n",
       "You can also use other configuration files, and use `sas_session_ssh(sascfg =)` to do so.\n"
     )
   }
-  return(sasr_env$.sas_session)
+  return(.sasr_env$.sas_session)
 }
 
 #' create sas_session based on configuration file
@@ -79,6 +82,6 @@ get_sas_session <- function() {
 sas_session_ssh <- function(sascfg = "sascfg_personal.py") {
   validate_sascfg(sascfg)
   sas <- saspy$SASsession(cfgfile = sascfg)
-  sasr_env$.sas_session <- sas
+  .sasr_env$.sas_session <- sas
   return(sas)
 }

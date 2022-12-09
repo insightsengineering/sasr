@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_sas.R
 \name{df2sd}
 \alias{df2sd}
-\title{transfer data.frame to sas data}
+\title{Transfer data.frame to SAS data}
 \usage{
 df2sd(df, table = "_df", libref = "", ..., sas_session = get_sas_session())
 }
@@ -13,8 +13,10 @@ df2sd(df, table = "_df", libref = "", ..., sas_session = get_sas_session())
 
 \item{libref}{(\code{character})\cr library name in SAS.}
 
+\item{...}{additional arguments for \code{saspy.sasbase.SASsession.df2sd}}
+
 \item{sas_session}{(\code{saspy.sasbase.SASsession}) SAS session.}
 }
 \description{
-transfer data.frame to sas data
+Transfer data.frame to SAS data
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_sas.R
 \name{sd2df}
 \alias{sd2df}
-\title{transfer sas data to R}
+\title{Transfer SAS data to R}
 \usage{
 sd2df(table, libref = "", ..., sas_session = get_sas_session())
 }
@@ -11,8 +11,10 @@ sd2df(table, libref = "", ..., sas_session = get_sas_session())
 
 \item{libref}{(\code{character})\cr library name in SAS.}
 
+\item{...}{additional arguments for \code{saspy.sasbase.SASsession.sd2df}}
+
 \item{sas_session}{(\code{saspy.sasbase.SASsession}) SAS session.}
 }
 \description{
-transfer sas data to R
+Transfer SAS data to R
 }

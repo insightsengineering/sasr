@@ -3,7 +3,7 @@
 saspy <- NULL
 #' sasr environment to hold sas sessions
 #' @keywords internal
-sasr_env <- new.env()
+.sasr_env <- new.env()
 #' onLoad function to execute on package loading
 #' @keywords internal
 .onLoad <- function(libname, pkgname) {
