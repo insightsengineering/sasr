@@ -13,7 +13,7 @@ df2sd(df, table = "_df", libref = "", ..., sas_session = get_sas_session())
 
 \item{libref}{(\code{character})\cr library name in SAS.}
 
-\item{sas_session}{(\code{saspy.sasbase.SASsession}) SAS session}
+\item{sas_session}{(\code{saspy.sasbase.SASsession}) SAS session.}
 }
 \description{
 transfer data.frame to sas data

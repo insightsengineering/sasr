@@ -1,18 +1,27 @@
 #' install `saspy` module
-#' @param method method to install `saspy`
-#' @param conda whether to use conda
+#' @param method (`character`)\cr method to install `saspy`.
+#' @param conda (`character`)\cr path to `conda` executable.
 #' @export
 install_saspy <- function(method = "auto", conda = "auto") {
+  warning(
+    "Before installing saspy, please read and confirm that you will ",
+    "comply to the lincense of saspy:\n",
+    "https://github.com/sassoftware/saspy/blob/main/LICENSE.md"
+  )
+  accept <- askYesNo("I have read the license and confirm that I will comply to the lincense:")
+  if (!identical(accept, TRUE)) {
+    stop("Installation of saspy cancelled.")
+  }
   reticulate::py_install("saspy", method = method, conda = conda)
 }
 
 #' validate the SAS ssh session is using tunnels
-#' @param session SAS session
-#' @param msg (`character`)\cr message to display
+#' @param session (`saspy.sasbase.SASsession`) SAS session.
+#' @param msg (`character`)\cr message to display.
 validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh must use tunnels to transfer datasets!") {
   cfgname <- session$sascfg$SAScfg$SAS_config_names[1]
   cfg <- session$sascfg$SAScfg[[cfgname]]
-  if(is.null(cfg$tunnel)|is.null(cfg$rtunnel)) {
+  if (is.null(cfg$tunnel) || is.null(cfg$rtunnel)) {
     stop(msg)
   }
 }
@@ -34,8 +43,8 @@ validate_data_names <- function(data) {
 }
 #' validate sas configuration file is valid
 #' @param sascfg (`character`)\cr file path of configuration.
-#' @details 
-#' Currently, on the file existence check is conducted and the rest
+#' @details
+#' Currently, only the file existence check is conducted and the rest
 #' is checked at python side.
 validate_sascfg <- function(sascfg) {
   if (!file.exists(sascfg)) {
@@ -51,17 +60,17 @@ validate_sascfg <- function(sascfg) {
 #' of function oriented programming instead of object oriented programmings
 #' @export
 get_sas_session <- function() {
-  if (is.null(.sas_session)) {
-    .sas_session <<- sas_session_ssh(sascfg = "sascfg_personal.py")
+  if (is.null(sasr_env$.sas_session)) {
+    sasr_env$.sas_session <- sas_session_ssh(sascfg = "sascfg_personal.py")
   }
-  if (is.null(.sas_session)) {
+  if (is.null(sasr_env$.sas_session)) {
     stop(
       "SAS session not established! Please review the python part and update ",
       "sascfg_personal.py accordingly.\n",
       "You can also use other configuration files, and use `sas_session_ssh(sascfg =)` to do so.\n"
     )
   }
-  return(.sas_session)
+  return(sasr_env$.sas_session)
 }
 
 #' create sas_session based on configuration file
@@ -70,6 +79,6 @@ get_sas_session <- function() {
 sas_session_ssh <- function(sascfg = "sascfg_personal.py") {
   validate_sascfg(sascfg)
   sas <- saspy$SASsession(cfgfile = sascfg)
-  .sas_session <<- sas
+  sasr_env$.sas_session <- sas
   return(sas)
 }

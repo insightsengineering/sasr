@@ -7,11 +7,11 @@
 run_sas(sas_code, results = c("TEXT", "HTML"), sas_session = get_sas_session())
 }
 \arguments{
-\item{sas_code}{(\code{character})\cr sas code to be executed}
+\item{sas_code}{(\code{character})\cr sas code to be executed.}
 
-\item{results}{(\code{character})\cr sas code execution results type}
+\item{results}{(\code{character})\cr sas code execution results type.}
 
-\item{sas_session}{(\code{saspy.sasbase.SASsession}) SAS session}
+\item{sas_session}{(\code{saspy.sasbase.SASsession}) SAS session.}
 }
 \value{
 a list with name \code{LST} and \code{LOG}.

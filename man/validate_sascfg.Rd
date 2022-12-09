@@ -13,6 +13,6 @@ validate_sascfg(sascfg)
 validate sas configuration file is valid
 }
 \details{
-Currently, on the file existence check is conducted and the rest
+Currently, only the file existence check is conducted and the rest
 is checked at python side.
 }
