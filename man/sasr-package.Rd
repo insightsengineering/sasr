@@ -4,7 +4,6 @@
 \name{sasr-package}
 \alias{sasr-package}
 \alias{_PACKAGE}
-\alias{mmrm-package}
 \title{\code{sasr} Package}
 \description{
 \code{sasr} provides interface to SAS through \code{saspy} and \code{reticulate} in R.

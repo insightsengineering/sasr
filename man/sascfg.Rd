@@ -2,7 +2,7 @@
 % Please edit documentation in R/sascfg.R
 \name{sascfg}
 \alias{sascfg}
-\title{create SAS session configuration file}
+\title{Create SAS session configuration file}
 \usage{
 sascfg(
   name = "default",
@@ -10,27 +10,30 @@ sascfg(
   sas,
   ssh = system("which ssh", intern = TRUE),
   encoding = "latin1",
+  options = list("-fullstimer"),
   ...,
   sascfg = "sascfg_personal.py"
 )
 }
 \arguments{
-\item{name}{(\code{character})\cr name of the configuration}
+\item{name}{(\code{character})\cr name of the configuration.}
 
-\item{host}{(\code{character})\cr host name of remote server}
+\item{host}{(\code{character})\cr host name of remote server.}
 
-\item{sas}{(\code{character})\cr SAS executable path on remote server}
+\item{sas}{(\code{character})\cr SAS executable path on remote server.}
 
-\item{ssh}{(\code{character})\cr executable path of ssh}
+\item{ssh}{(\code{character})\cr executable path of ssh.}
 
-\item{encoding}{(\code{character})\cr encoding of the SAS session}
+\item{encoding}{(\code{character})\cr encoding of the SAS session.}
 
-\item{...}{additional arguments}
+\item{options}{(\code{list})\cr additional list of arguments to pass to \code{ssh} command.}
 
-\item{sascfg}{(\code{character})\cr target file of configuration}
+\item{...}{additional arguments.}
+
+\item{sascfg}{(\code{character})\cr target file of configuration.}
 }
 \description{
-create SAS session configuration file
+Create SAS session configuration file
 }
 \details{
 \code{host} and \code{sas} are required to connect to remote SAS server. Other arguments can follow default.

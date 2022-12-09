@@ -2,22 +2,22 @@
 % Please edit documentation in R/run_sas.R
 \name{run_sas}
 \alias{run_sas}
-\title{run sas code with sas session}
+\title{Run SAS code with SAS session}
 \usage{
 run_sas(sas_code, results = c("TEXT", "HTML"), sas_session = get_sas_session())
 }
 \arguments{
-\item{sas_code}{(\code{character})\cr sas code to be executed}
+\item{sas_code}{(\code{character})\cr sas code to be executed.}
 
-\item{results}{(\code{character})\cr sas code execution results type}
+\item{results}{(\code{character})\cr sas code execution results type.}
 
-\item{sas_session}{(\code{saspy.sasbase.SASsession}) SAS session}
+\item{sas_session}{(\code{saspy.sasbase.SASsession}) SAS session.}
 }
 \value{
 a list with name \code{LST} and \code{LOG}.
 }
 \description{
-run sas code with sas session
+Run SAS code with SAS session
 }
 \details{
 \code{run_sas} will run sas code through SAS session.

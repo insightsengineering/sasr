@@ -2,17 +2,18 @@
 % Please edit documentation in R/utils.R
 \name{validate_data_names}
 \alias{validate_data_names}
-\title{validate data frame names are valid in SAS}
+\title{Validate data frame names are valid in SAS}
 \usage{
 validate_data_names(data)
 }
 \arguments{
-\item{(`data.frame`)\cr}{data.frame to be checked}
+\item{data}{(\code{data.frame})\cr data.frame to be checked.}
 }
 \description{
-validate data frame names are valid in SAS
+Validate data frame names are valid in SAS
 }
 \details{
 In SAS, the variable names should be consist of letters, numbers and underscore.
 Other characters are not allowed.
 }
+\keyword{internal}

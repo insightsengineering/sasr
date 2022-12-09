@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{validate_sascfg}
 \alias{validate_sascfg}
-\title{validate sas configuration file is valid}
+\title{Validate sas configuration file is valid}
 \usage{
 validate_sascfg(sascfg)
 }
@@ -10,9 +10,10 @@ validate_sascfg(sascfg)
 \item{sascfg}{(\code{character})\cr file path of configuration.}
 }
 \description{
-validate sas configuration file is valid
+Validate sas configuration file is valid
 }
 \details{
-Currently, on the file existence check is conducted and the rest
+Currently, only the file existence check is conducted and the rest
 is checked at python side.
 }
+\keyword{internal}

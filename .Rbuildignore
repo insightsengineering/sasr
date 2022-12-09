@@ -14,6 +14,9 @@ README.*
 coverage.*
 ^\.pre-commit-config\.yaml$
 ^codemeta\.json$
-init.sh
-workflows.md
+init\.sh
+workflows\.md
 images
+__pycache__
+design
+sascfg_personal\.py
