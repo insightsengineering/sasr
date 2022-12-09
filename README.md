@@ -57,7 +57,7 @@ To use `sasr`, you need to follow these steps
     1. To use the default connection in `sascfg_personal.py`, you can run any command like `run_sas`, `df2sd` or `sd2df`.
         1. The session will be created if there is no session available stored in `sasr_env$.sas_session`
         1. If `sasr_env$.sas_session` is created, this session will be used by default.
-        1. Do not create any variable called `.sas_session` in envrionment `sasr:::sasr_env`
+        1. Do not create any variable called `.sas_session` in environment `sasr:::sasr_env`
     1. To create the session manually, you can call `sas_session_ssh()`
         1. `SAS_session` have one argument `sascfg`, pointing to the SAS session configuration file.
     1. To use multiple sessions, you need to store the session `your_session <- sas_session_ssh(sascfg)`
