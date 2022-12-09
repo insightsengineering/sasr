@@ -13,8 +13,7 @@ Depends:
     R (>= 3.6)
 Imports:
     reticulate,
-    checkmate,
-    stringr
+    checkmate
 Suggests:
     knitr,
     testthat (>= 3.0.0)

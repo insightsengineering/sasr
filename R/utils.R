@@ -1,6 +1,8 @@
-#' install `saspy` module
+#' Install `saspy` module
+#'
 #' @param method (`character`)\cr method to install `saspy`.
 #' @param conda (`character`)\cr path to `conda` executable.
+#'
 #' @export
 install_saspy <- function(method = "auto", conda = "auto") {
   warning(
@@ -15,9 +17,14 @@ install_saspy <- function(method = "auto", conda = "auto") {
   reticulate::py_install("saspy", method = method, conda = conda)
 }
 
-#' validate the SAS ssh session is using tunnels
+#' Validate the SAS ssh session is using tunnels
+#'
 #' @param session (`saspy.sasbase.SASsession`) SAS session.
 #' @param msg (`character`)\cr message to display.
+#'
+#' @description SAS session must enable tunnles to transfer datasets. If not used, a error will pop up.
+#'
+#' @keywords internal
 validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh must use tunnels to transfer datasets!") {
   cfgname <- session$sascfg$SAScfg$SAS_config_names[1]
   cfg <- session$sascfg$SAScfg[[cfgname]]
@@ -29,6 +36,8 @@ validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh mus
 #' Validate data frame names are valid in SAS
 #'
 #' @param data (`data.frame`)\cr data.frame to be checked.
+#'
+#' @keywords internal
 #'
 #' @details
 #' In SAS, the variable names should be consist of letters, numbers and underscore.
@@ -44,8 +53,13 @@ validate_data_names <- function(data) {
     )
   }
 }
-#' validate sas configuration file is valid
+
+#' Validate sas configuration file is valid
+#'
 #' @param sascfg (`character`)\cr file path of configuration.
+#'
+#' @keywords internal
+#'
 #' @details
 #' Currently, only the file existence check is conducted and the rest
 #' is checked at python side.
@@ -58,9 +72,12 @@ validate_sascfg <- function(sascfg) {
     )
   }
 }
-#' get the last/default SAS session
+
+#' Get the last/default SAS session
+#'
 #' @details this function is designed to facilitate the R users programming practice
-#' of function oriented programming instead of object oriented programmings
+#' of function oriented programming instead of object oriented programmings.
+#'
 #' @export
 get_sas_session <- function() {
   if (is.null(.sasr_env$.sas_session)) {
@@ -76,8 +93,10 @@ get_sas_session <- function() {
   return(.sasr_env$.sas_session)
 }
 
-#' create sas_session based on configuration file
-#' @param sascfg (`character`)\cr SAS session condifuration
+#' Create sas_session based on configuration file
+#'
+#' @param sascfg (`character`)\cr SAS session configuration.
+#'
 #' @export
 sas_session_ssh <- function(sascfg = "sascfg_personal.py") {
   validate_sascfg(sascfg)

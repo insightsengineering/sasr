@@ -2,7 +2,7 @@
 #'
 #' `sasr` provides interface to SAS through `saspy` and `reticulate` in R.
 #'
-#' @aliases mmrm-package
+#' @aliases sasr-package
 "_PACKAGE"
 #'
 #' @import reticulate

@@ -2,13 +2,13 @@
 % Please edit documentation in R/utils.R
 \name{sas_session_ssh}
 \alias{sas_session_ssh}
-\title{create sas_session based on configuration file}
+\title{Create sas_session based on configuration file}
 \usage{
 sas_session_ssh(sascfg = "sascfg_personal.py")
 }
 \arguments{
-\item{sascfg}{(\code{character})\cr SAS session condifuration}
+\item{sascfg}{(\code{character})\cr SAS session configuration.}
 }
 \description{
-create sas_session based on configuration file
+Create sas_session based on configuration file
 }

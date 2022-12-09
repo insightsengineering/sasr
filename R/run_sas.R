@@ -1,10 +1,11 @@
-#' Run SAS Code with SAS Session
+#' Run SAS code with SAS session
 #'
 #' @param sas_code (`character`)\cr sas code to be executed.
 #' @param results (`character`)\cr sas code execution results type.
 #' @param sas_session (`saspy.sasbase.SASsession`) SAS session.
 #'
 #' @return a list with name `LST` and `LOG`.
+#'
 #' @export
 #' @details `run_sas` will run sas code through SAS session.
 #' The results is a named list of `LST` and `LOG`.
@@ -37,6 +38,7 @@ df2sd <- function(df, table = "_df", libref = "", ..., sas_session = get_sas_ses
 #' @param libref (`character`)\cr library name in SAS.
 #' @param sas_session (`saspy.sasbase.SASsession`) SAS session.
 #' @param ... additional arguments for `saspy.sasbase.SASsession.sd2df`
+#'
 #' @export
 sd2df <- function(table, libref = "", ..., sas_session = get_sas_session()) {
   validate_ssh_with_tunnel(sas_session)

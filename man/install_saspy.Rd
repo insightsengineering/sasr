@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{install_saspy}
 \alias{install_saspy}
-\title{install \code{saspy} module}
+\title{Install \code{saspy} module}
 \usage{
 install_saspy(method = "auto", conda = "auto")
 }
@@ -12,5 +12,5 @@ install_saspy(method = "auto", conda = "auto")
 \item{conda}{(\code{character})\cr path to \code{conda} executable.}
 }
 \description{
-install \code{saspy} module
+Install \code{saspy} module
 }

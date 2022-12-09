@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{validate_ssh_with_tunnel}
 \alias{validate_ssh_with_tunnel}
-\title{validate the SAS ssh session is using tunnels}
+\title{Validate the SAS ssh session is using tunnels}
 \usage{
 validate_ssh_with_tunnel(
   session,
@@ -15,5 +15,6 @@ validate_ssh_with_tunnel(
 \item{msg}{(\code{character})\cr message to display.}
 }
 \description{
-validate the SAS ssh session is using tunnels
+SAS session must enable tunnles to transfer datasets. If not used, a error will pop up.
 }
+\keyword{internal}

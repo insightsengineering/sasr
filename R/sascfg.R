@@ -1,4 +1,5 @@
-#' create SAS session configuration file
+#' Create SAS session configuration file
+#'
 #' @param name (`character`)\cr name of the configuration.
 #' @param host (`character`)\cr host name of remote server.
 #' @param sas (`character`)\cr SAS executable path on remote server.
@@ -6,6 +7,8 @@
 #' @param encoding (`character`)\cr encoding of the SAS session.
 #' @param ... additional arguments.
 #' @param sascfg (`character`)\cr target file of configuration.
+#' @param options (`list`)\cr additional list of arguments to pass to `ssh` command.
+#'
 #' @export
 #' @details
 #' `host` and `sas` are required to connect to remote SAS server. Other arguments can follow default.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/sascfg.R
 \name{sascfg}
 \alias{sascfg}
-\title{create SAS session configuration file}
+\title{Create SAS session configuration file}
 \usage{
 sascfg(
   name = "default",
@@ -26,12 +26,14 @@ sascfg(
 
 \item{encoding}{(\code{character})\cr encoding of the SAS session.}
 
+\item{options}{(\code{list})\cr additional list of arguments to pass to \code{ssh} command.}
+
 \item{...}{additional arguments.}
 
 \item{sascfg}{(\code{character})\cr target file of configuration.}
 }
 \description{
-create SAS session configuration file
+Create SAS session configuration file
 }
 \details{
 \code{host} and \code{sas} are required to connect to remote SAS server. Other arguments can follow default.

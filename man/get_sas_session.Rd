@@ -2,14 +2,14 @@
 % Please edit documentation in R/utils.R
 \name{get_sas_session}
 \alias{get_sas_session}
-\title{get the last/default SAS session}
+\title{Get the last/default SAS session}
 \usage{
 get_sas_session()
 }
 \description{
-get the last/default SAS session
+Get the last/default SAS session
 }
 \details{
 this function is designed to facilitate the R users programming practice
-of function oriented programming instead of object oriented programmings
+of function oriented programming instead of object oriented programmings.
 }
