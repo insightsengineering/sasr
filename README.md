@@ -43,7 +43,7 @@ After the installation completes, you are ready to use `sasr` package.
 
 To use `sasr`, you need to follow these steps
 
-1. Configure your SAS server in `sascfg_personal.py` under your working directory. This is the default file that `sasr` will look at.
+1. Configure your SAS server in `sascfg_personal.py` under your working directory or the home directory. This is the default file that `sasr` will look at. However, you can stillchange that through `options(sascfg = )`, then `sasr` will try to find any name that is avaiable in your specified option.
     1. If you don't know how to create this file, use `sascfg()` to create the file. Required arguments include `host` and `sas`.
         1. `sascfg()` only creates ssh based SAS session.
         1. Only password-less ssh connection is supported, e.g. ssh via public keys.
@@ -54,7 +54,7 @@ To use `sasr`, you need to follow these steps
     1. You can create the configuration by yourself and then SAS connection will not be restricted to ssh.
     1. You can have multiple configuration files with different file names
 1. Create the SAS session based on the configuration file
-    1. To use the default connection in `sascfg_personal.py`, you can run any command like `run_sas`, `df2sd` or `sd2df`.
+    1. To use the default connection specified in the confifuration file, you can run any command like `run_sas`, `df2sd` or `sd2df`.
         1. The session will be created if there is no session available stored in `.sasr_env$.sas_session`
         1. If `.sasr_env$.sas_session` is created, this session will be used by default.
         1. Do not create any variable called `.sas_session` in environment `sasr:::.sasr_env`
