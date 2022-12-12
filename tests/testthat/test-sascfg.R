@@ -1,7 +1,7 @@
 # sascfg ----
 
 test_that("sascfg creates sas configuration file", {
-  skip_if_not(py_available())
+  skip_if_not(py_available(TRUE))
   tmpf <- tempfile()
   sascfg(ssh = "ssh", sas = "sas", host = "test.com", sascfg = tmpf)
   on.exit(unlink(tmpf))

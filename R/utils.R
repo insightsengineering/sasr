@@ -65,11 +65,18 @@ validate_data_names <- function(data) {
 #' Currently, only the file existence check is conducted and the rest
 #' is checked at python side.
 validate_sascfg <- function(sascfg) {
+  if (is.null(sascfg)) {
+    warning(
+      "No SAS configuration file specified. By default the configuration file under ",
+      " saspy installation path will be used. This is usually not a real accessible SAS configuration."
+    )
+    return()
+  }
   if (!file.exists(sascfg)) {
     stop(
       sascfg,
-      " must exist in current working directory to establish connections!\n",
-      "use `sascfg()` to create this file and modify its content accordingly!"
+      " must exist to establish a connection.\n",
+      "Use `sascfg()` to create this file and modify its content accordingly!"
     )
   }
 }
@@ -82,13 +89,16 @@ validate_sascfg <- function(sascfg) {
 #' @export
 get_sas_session <- function() {
   if (is.null(.sasr_env$.sas_session)) {
-    .sasr_env$.sas_session <- sas_session_ssh(sascfg = "sascfg_personal.py")
+    .sasr_env$.sas_session <- sas_session_ssh(sascfg = get_sas_cfg())
   }
   if (is.null(.sasr_env$.sas_session)) {
     stop(
       "SAS session not established! Please review the python part and update ",
-      "sascfg_personal.py accordingly.\n",
-      "You can also use other configuration files, and use `sas_session_ssh(sascfg =)` to do so.\n"
+      getOption("sascfg"),
+      " accordingly.\n",
+      "You can also set the default sas cofiguration file using `options(sascfg = )` ",
+      "to allow other files to be used, ",
+      "or use `sas_session_ssh(sascfg =)` to choose the configuration file manually.\n"
     )
   }
   return(.sasr_env$.sas_session)
@@ -99,9 +109,27 @@ get_sas_session <- function() {
 #' @param sascfg (`character`)\cr SAS session configuration.
 #'
 #' @export
-sas_session_ssh <- function(sascfg = "sascfg_personal.py") {
+sas_session_ssh <- function(sascfg = get_sas_cfg()) {
   validate_sascfg(sascfg)
   sas <- saspy$SASsession(cfgfile = sascfg)
   .sasr_env$.sas_session <- sas
   return(sas)
+}
+
+#' Obtain the SAS configuration file
+#'
+#' @details Obtain the default sas configuration file. By default, it will search
+#' the `sascfg_personal.py` file under current directory. If it does not exist, it will
+#' search this file under home directory. If this file does not exist, NULL will be returned.
+#'
+#' @export
+get_sas_cfg <- function() {
+  default_cfg <- getOption("sascfg", "sascfg_personal.py")
+  if (file.exists(default_cfg)) {
+    return(default_cfg)
+  }
+  if (file.exists(file.path("~", default_cfg))) {
+    return(file.path("~", default_cfg))
+  }
+  return(NULL)
 }

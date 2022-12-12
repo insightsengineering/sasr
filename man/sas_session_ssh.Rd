@@ -4,7 +4,7 @@
 \alias{sas_session_ssh}
 \title{Create sas_session based on configuration file}
 \usage{
-sas_session_ssh(sascfg = "sascfg_personal.py")
+sas_session_ssh(sascfg = get_sas_cfg())
 }
 \arguments{
 \item{sascfg}{(\code{character})\cr SAS session configuration.}
