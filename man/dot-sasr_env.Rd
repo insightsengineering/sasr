@@ -3,7 +3,7 @@
 \docType{data}
 \name{.sasr_env}
 \alias{.sasr_env}
-\title{sasr environment to hold sas sessions}
+\title{sasr Environment}
 \format{
 An object of class \code{environment} of length 0.
 }
@@ -11,6 +11,6 @@ An object of class \code{environment} of length 0.
 .sasr_env
 }
 \description{
-sasr environment to hold sas sessions
+sasr Environment
 }
 \keyword{internal}

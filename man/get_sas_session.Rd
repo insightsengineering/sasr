@@ -2,12 +2,13 @@
 % Please edit documentation in R/utils.R
 \name{get_sas_session}
 \alias{get_sas_session}
-\title{Get the last/default SAS session}
+\title{Get the Last or Default SAS Session}
 \usage{
 get_sas_session()
 }
 \description{
-Get the last/default SAS session
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+Obtain the last session or default session.
 }
 \details{
 this function is designed to facilitate the R users programming practice

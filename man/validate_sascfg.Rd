@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{validate_sascfg}
 \alias{validate_sascfg}
-\title{Validate sas configuration file is valid}
+\title{Validate SAS Configuration File Exist}
 \usage{
 validate_sascfg(sascfg)
 }
@@ -10,7 +10,8 @@ validate_sascfg(sascfg)
 \item{sascfg}{(\code{character})\cr file path of configuration.}
 }
 \description{
-Validate sas configuration file is valid
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+Validate if SAS configuration file exist.
 }
 \details{
 Currently, only the file existence check is conducted and the rest

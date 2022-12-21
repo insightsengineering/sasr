@@ -2,7 +2,7 @@
 % Please edit documentation in R/sascfg.R
 \name{sascfg}
 \alias{sascfg}
-\title{Create SAS session configuration file}
+\title{Create SAS Session Configuration File}
 \usage{
 sascfg(
   name = "default",
@@ -33,7 +33,8 @@ sascfg(
 \item{sascfg}{(\code{character})\cr target file of configuration.}
 }
 \description{
-Create SAS session configuration file
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+Create SAS session configuration file based on argument.
 }
 \details{
 \code{host} and \code{sas} are required to connect to remote SAS server. Other arguments can follow default.

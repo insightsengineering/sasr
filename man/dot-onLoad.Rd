@@ -2,11 +2,11 @@
 % Please edit documentation in R/zzz.R
 \name{.onLoad}
 \alias{.onLoad}
-\title{onLoad function to execute on package loading}
+\title{onLoad Function}
 \usage{
 .onLoad(libname, pkgname)
 }
 \description{
-onLoad function to execute on package loading
+onLoad Function
 }
 \keyword{internal}
