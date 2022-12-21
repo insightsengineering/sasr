@@ -22,5 +22,5 @@ df2sd(df, table = "_df", libref = "", ..., sas_session = get_sas_session())
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
-Transfer \code{data.frame} object from R envrionment to SAS.
+Transfer \code{data.frame} object from R environment to SAS.
 }
