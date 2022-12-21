@@ -1,4 +1,7 @@
-#' Create SAS session configuration file
+#' Create SAS Session Configuration File
+#'
+#' @description `r lifecycle::badge("experimental")`
+#' Create SAS session configuration file based on argument.
 #'
 #' @param name (`character`)\cr name of the configuration.
 #' @param host (`character`)\cr host name of remote server.
