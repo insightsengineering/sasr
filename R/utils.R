@@ -1,4 +1,7 @@
-#' Install `saspy` module
+#' Install `saspy` Module
+#'
+#' @description `r lifecycle::badge("experimental")`
+#' Install `saspy` module in `reticulate`.
 #'
 #' @param method (`character`)\cr method to install `saspy`.
 #' @param conda (`character`)\cr path to `conda` executable.
@@ -18,7 +21,10 @@ install_saspy <- function(method = "auto", conda = "auto") {
   reticulate::py_install("saspy", method = method, conda = conda)
 }
 
-#' Validate the SAS ssh session is using tunnels
+#' Validate the SAS ssh Session Has Tunnels
+#'
+#' @description `r lifecycle::badge("experimental")`
+#' Validate if the SAS session has tunnels enabled.
 #'
 #' @param session (`saspy.sasbase.SASsession`) SAS session.
 #' @param msg (`character`)\cr message to display.
@@ -34,7 +40,10 @@ validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh mus
   }
 }
 
-#' Validate data frame names are valid in SAS
+#' Validate data.frame Has Valid Variable Names in SAS
+#'
+#' @description `r lifecycle::badge("experimental")`
+#' Validate if data contains validate variable names in SAS.
 #'
 #' @param data (`data.frame`)\cr data.frame to be checked.
 #'
@@ -55,7 +64,10 @@ validate_data_names <- function(data) {
   }
 }
 
-#' Validate sas configuration file is valid
+#' Validate SAS Configuration File Exist
+#'
+#' @description `r lifecycle::badge("experimental")`
+#' Validate if SAS configuration file exist.
 #'
 #' @param sascfg (`character`)\cr file path of configuration.
 #'
@@ -81,7 +93,10 @@ validate_sascfg <- function(sascfg) {
   }
 }
 
-#' Get the last/default SAS session
+#' Get the Last or Default SAS Session
+#'
+#' @description `r lifecycle::badge("experimental")`
+#' Obtain the last session or default session.
 #'
 #' @details this function is designed to facilitate the R users programming practice
 #' of function oriented programming instead of object oriented programmings.
@@ -104,7 +119,10 @@ get_sas_session <- function() {
   return(.sasr_env$.sas_session)
 }
 
-#' Create sas_session based on configuration file
+#' Create SAS ssh Session Based on Configuration File
+#'
+#' @description `r lifecycle::badge("experimental")`
+#' Create a SAS ssh session.
 #'
 #' @param sascfg (`character`)\cr SAS session configuration.
 #'
@@ -116,7 +134,10 @@ sas_session_ssh <- function(sascfg = get_sas_cfg()) {
   return(sas)
 }
 
-#' Obtain the SAS configuration file
+#' Obtain the SAS Configuration File
+#'
+#' @description `r lifecycle::badge("experimental")`
+#' Obtain the file path of the SAS configuration file.
 #'
 #' @details Obtain the default sas configuration file. By default, it will search
 #' the `sascfg_personal.py` file under current directory. If it does not exist, it will
