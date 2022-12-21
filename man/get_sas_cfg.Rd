@@ -2,12 +2,13 @@
 % Please edit documentation in R/utils.R
 \name{get_sas_cfg}
 \alias{get_sas_cfg}
-\title{Obtain the SAS configuration file}
+\title{Obtain the SAS Configuration File}
 \usage{
 get_sas_cfg()
 }
 \description{
-Obtain the SAS configuration file
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+Obtain the file path of the SAS configuration file.
 }
 \details{
 Obtain the default sas configuration file. By default, it will search

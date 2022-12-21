@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_sas.R
 \name{sd2df}
 \alias{sd2df}
-\title{Transfer SAS data to R}
+\title{Transfer SAS Data to R}
 \usage{
 sd2df(table, libref = "", ..., sas_session = get_sas_session())
 }
@@ -15,6 +15,10 @@ sd2df(table, libref = "", ..., sas_session = get_sas_session())
 
 \item{sas_session}{(\code{saspy.sasbase.SASsession}) SAS session.}
 }
+\value{
+\code{data.frame} object.
+}
 \description{
-Transfer SAS data to R
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+Transfer the table in SAS session to R.
 }

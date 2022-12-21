@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{install_saspy}
 \alias{install_saspy}
-\title{Install \code{saspy} module}
+\title{Install \code{saspy} Module}
 \usage{
 install_saspy(method = "auto", conda = "auto")
 }
@@ -12,5 +12,6 @@ install_saspy(method = "auto", conda = "auto")
 \item{conda}{(\code{character})\cr path to \code{conda} executable.}
 }
 \description{
-Install \code{saspy} module
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+Install \code{saspy} module in \code{reticulate}.
 }

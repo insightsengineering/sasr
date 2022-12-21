@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{validate_data_names}
 \alias{validate_data_names}
-\title{Validate data frame names are valid in SAS}
+\title{Validate data.frame Has Valid Variable Names in SAS}
 \usage{
 validate_data_names(data)
 }
@@ -10,7 +10,8 @@ validate_data_names(data)
 \item{data}{(\code{data.frame})\cr data.frame to be checked.}
 }
 \description{
-Validate data frame names are valid in SAS
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+Validate if data contains validate variable names in SAS.
 }
 \details{
 In SAS, the variable names should be consist of letters, numbers and underscore.

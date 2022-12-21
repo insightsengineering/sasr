@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_sas.R
 \name{run_sas}
 \alias{run_sas}
-\title{Run SAS code with SAS session}
+\title{Run SAS code with SAS Session}
 \usage{
 run_sas(sas_code, results = c("TEXT", "HTML"), sas_session = get_sas_session())
 }
@@ -14,10 +14,14 @@ run_sas(sas_code, results = c("TEXT", "HTML"), sas_session = get_sas_session())
 \item{sas_session}{(\code{saspy.sasbase.SASsession}) SAS session.}
 }
 \value{
-a list with name \code{LST} and \code{LOG}.
+Named list with following elements:
+\itemize{
+\item \code{LOG}: \code{string} of SAS execution log.
+\item \code{LST}: \code{string} of SAS execution result, in html or txt format.
+}
 }
 \description{
-Run SAS code with SAS session
+Run SAS code with SAS Session
 }
 \details{
 \code{run_sas} will run sas code through SAS session.
