@@ -70,7 +70,8 @@ validate_data <- function(data) {
     warning(
       "row.names is not supported in SAS and will be dropped, ",
       "Please consider create a column to hold the row names.",
-      call. = FALSE)
+      call. = FALSE
+    )
     row.names(data) <- NULL
   }
   return(data)

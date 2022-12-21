@@ -18,7 +18,12 @@ test_that("validate_data drop row names and give warnings", {
     b = 2
   )
   row.names(df) <- "test"
-  expect_warning({df2 <- validate_data(df)}, "row\\.names is not supported in SAS and will be dropped")
+  expect_warning(
+    {
+      df2 <- validate_data(df)
+    },
+    "row\\.names is not supported in SAS and will be dropped"
+  )
   expect_identical(row.names(df2), "1")
 })
 
