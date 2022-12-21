@@ -84,3 +84,20 @@ cat(result$LOG)
 
 cat(result$LST)
 ```
+## FAQ
+
+Q: Why use `saspy` instead of using `ssh` tunnels?
+
+A: Although we can use `ssh` tunnels to transfer data and
+execute SAS commands, there are many restrictions: it only
+supports `ssh` connection. Using `saspy`, the official Python
+interface to SAS, we can enable all connection types, without
+reinventing the wheel, e.g. we can also connect to a local SAS
+installation with the same syntax, or connect to a remote SAS
+Viya through http. In addition, SAS sessions in `saspy` will
+not end until you terminate it (or encounter net work issues),
+it will be nice to execute multiple SAS code one by one, not
+necessarily putting them in one script and execute the whole
+script at once. Also, with the update of `saspy` over time,
+`sasr` will be easily extensible, to include functionalities
+other than transferring data and executing SAS code.
