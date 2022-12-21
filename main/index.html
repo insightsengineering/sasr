@@ -46,12 +46,6 @@
 <li class="nav-item">
   <a class="nav-link" href="news/index.html">Changelog</a>
 </li>
-<!-- start dropdown for versions --> <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle"
-          data-bs-toggle="dropdown" role="button"
-          aria-expanded="false" aria-haspopup="true"
-          id="dropdown-versions">Versions</a> <div class="dropdown-menu" aria-labelledby="dropdown-versions"> <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/main">main</a> </div></li>
-<!-- end dropdown for versions -->
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -105,7 +99,7 @@
 </h2>
 <p>To use <code>sasr</code>, you need to follow these steps</p>
 <ol style="list-style-type: decimal">
-<li>Configure your SAS server in <code>sascfg_personal.py</code> under your working directory. This is the default file that <code>sasr</code> will look at.
+<li>Configure your SAS server in <code>sascfg_personal.py</code> under your working directory or the home directory. This is the default file that <code>sasr</code> will look at. However, you can still change that through <code>options(sascfg = )</code>, then <code>sasr</code> will try to find any name that is available in your specified option.
 <ol style="list-style-type: decimal">
 <li>If you don’t know how to create this file, use <code><a href="reference/sascfg.html">sascfg()</a></code> to create the file. Required arguments include <code>host</code> and <code>sas</code>.
 <ol style="list-style-type: decimal">
@@ -127,7 +121,7 @@
 </li>
 <li>Create the SAS session based on the configuration file
 <ol style="list-style-type: decimal">
-<li>To use the default connection in <code>sascfg_personal.py</code>, you can run any command like <code>run_sas</code>, <code>df2sd</code> or <code>sd2df</code>.
+<li>To use the default connection specified in the configuration file, you can run any command like <code>run_sas</code>, <code>df2sd</code> or <code>sd2df</code>.
 <ol style="list-style-type: decimal">
 <li>The session will be created if there is no session available stored in <code>.sasr_env$.sas_session</code>
 </li>
