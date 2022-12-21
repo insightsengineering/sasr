@@ -26,7 +26,7 @@ run_sas <- function(sas_code, results = c("TEXT", "HTML"), sas_session = get_sas
 #' Transfer data.frame to SAS
 #'
 #' @description `r lifecycle::badge("experimental")`
-#' Transfer `data.frame` object from R envrionment to SAS.
+#' Transfer `data.frame` object from R environment to SAS.
 #'
 #' @param df (`data.frame`)\cr data frame to be transferred.
 #' @param table (`character`)\cr table name in SAS.
