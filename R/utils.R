@@ -40,10 +40,11 @@ validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh mus
   }
 }
 
-#' Validate data.frame Has Valid Variable Names in SAS
+#' Validate and Process `data.frame` for SAS
 #'
 #' @description `r lifecycle::badge("experimental")`
-#' Validate if data contains validate variable names in SAS.
+#' Validate if data contains validate variable names in SAS, and
+#' remove possible row names.
 #'
 #' @param data (`data.frame`)\cr data.frame to be checked.
 #'
@@ -52,7 +53,10 @@ validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh mus
 #' @details
 #' In SAS, the variable names should be consist of letters, numbers and underscore.
 #' Other characters are not allowed.
-validate_data_names <- function(data) {
+#' In addition, in SAS, row names(index) are not allowed.
+#'
+#' @return `data.frame`\cr
+validate_data <- function(data) {
   nms <- colnames(data)
   nms_check <- grepl("^[a-zA-Z_]+(\\w+)?$", nms)
   if (!all(nms_check)) {
@@ -62,6 +66,14 @@ validate_data_names <- function(data) {
       " contains illegal characters that is not allowed.\n"
     )
   }
+  if (!identical(row.names(data), as.character(seq_len(nrow(data))))) {
+    warning(
+      "row.names is not supported in SAS and will be dropped, ",
+      "Please consider create a column to hold the row names.",
+      call. = FALSE)
+    row.names(data) <- NULL
+  }
+  return(data)
 }
 
 #' Validate SAS Configuration File Exist

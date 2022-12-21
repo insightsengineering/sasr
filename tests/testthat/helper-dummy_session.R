@@ -6,7 +6,7 @@ dummy_session <- list(
   },
   df2sd = function(df, table, libref, ...) {
     df_call <- substitute(df, env = parent.frame())
-    cat(sprintf("submit %s into SAS %s.%s\n", deparse(df_call), libref, table))
+    cat(sprintf("submit data into SAS %s.%s\n", libref, table))
   },
   sd2df = function(table, libref, ...) {
     cat(sprintf("obtain SAS dataset %s.%s\n", libref, table))

@@ -1,6 +1,6 @@
 #' Run SAS code with SAS Session
 #'
-#' @descrption `r lifecycle::badge("experimental")`
+#' @description `r lifecycle::badge("experimental")`
 #' Run SAS code with a SAS session.
 #'
 #' @param sas_code (`character`)\cr sas code to be executed.
@@ -25,7 +25,7 @@ run_sas <- function(sas_code, results = c("TEXT", "HTML"), sas_session = get_sas
 }
 #' Transfer data.frame to SAS
 #'
-#' @descrption `r lifecycle::badge("experimental")`
+#' @description `r lifecycle::badge("experimental")`
 #' Transfer `data.frame` object from R envrionment to SAS.
 #'
 #' @param df (`data.frame`)\cr data frame to be transferred.
@@ -38,7 +38,7 @@ run_sas <- function(sas_code, results = c("TEXT", "HTML"), sas_session = get_sas
 #' @export
 df2sd <- function(df, table = "_df", libref = "", ..., sas_session = get_sas_session()) {
   validate_ssh_with_tunnel(sas_session)
-  validate_data_names(df)
+  df <- validate_data(df)
   sas_session$df2sd(df, table = table, libref = libref, ...)
 }
 
