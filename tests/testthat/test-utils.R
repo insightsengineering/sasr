@@ -1,6 +1,6 @@
-# validate_data_names ----
+# validate_data ----
 
-test_that("validate_data_names will give errors if . exist", {
+test_that("validate_data will give errors if . exist", {
   df <- data.frame(
     a.1 = 1
   )
@@ -8,8 +8,23 @@ test_that("validate_data_names will give errors if . exist", {
     a = 1,
     b = 2
   )
-  expect_error(validate_data_names(df), "a\\.1 contains illegal characters that is not allowed\\.")
-  expect_silent(validate_data_names(df2))
+  expect_error(validate_data(df), "a\\.1 contains illegal characters that is not allowed\\.")
+  expect_silent(validate_data(df2))
+})
+
+test_that("validate_data drop row names and give warnings", {
+  df <- data.frame(
+    a = 1,
+    b = 2
+  )
+  row.names(df) <- "test"
+  expect_warning(
+    {
+      df2 <- validate_data(df)
+    },
+    "row\\.names is not supported in SAS and will be dropped"
+  )
+  expect_identical(row.names(df2), "1")
 })
 
 # validate_ssh_with_tunnel ----

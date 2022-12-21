@@ -21,7 +21,8 @@ Named list with following elements:
 }
 }
 \description{
-Run SAS code with SAS Session
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+Run SAS code with a SAS session.
 }
 \details{
 \code{run_sas} will run sas code through SAS session.

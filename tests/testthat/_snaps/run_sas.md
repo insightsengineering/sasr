@@ -12,7 +12,7 @@
     Code
       df2sd(iris2, "iris2", "work", sas_session = dummy_session)
     Output
-      submit iris2 into SAS work.iris2
+      submit data into SAS work.iris2
 
 # sd2df call the correct method
 
