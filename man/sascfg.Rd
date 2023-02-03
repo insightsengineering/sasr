@@ -7,7 +7,7 @@
 sascfg(
   name = "default",
   host,
-  sas,
+  saspath,
   ssh = system("which ssh", intern = TRUE),
   encoding = "latin1",
   options = list("-fullstimer"),
@@ -20,7 +20,7 @@ sascfg(
 
 \item{host}{(\code{character})\cr host name of remote server.}
 
-\item{sas}{(\code{character})\cr SAS executable path on remote server.}
+\item{saspath}{(\code{character})\cr SAS executable path on remote server.}
 
 \item{ssh}{(\code{character})\cr executable path of ssh.}
 
@@ -37,7 +37,7 @@ sascfg(
 Create SAS session configuration file based on argument.
 }
 \details{
-\code{host} and \code{sas} are required to connect to remote SAS server. Other arguments can follow default.
+\code{host} and \code{saspath} are required to connect to remote SAS server. Other arguments can follow default.
 If transferring datasets is needed, then tunnelling is required.
 Use \verb{tunnel = }, \verb{rtunnel = } to specify tunnels and reverse tunnels.
 The values should be length 1 integer.
