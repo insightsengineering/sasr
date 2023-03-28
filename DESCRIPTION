@@ -1,7 +1,7 @@
 Type: Package
 Package: sasr
 Title: sasr
-Version: 0.0.0.9003
+Version: 0.0.0.9004
 Date: 2023-03-28
 Authors@R:
     person("insightsengineering", , , "insightsengineering@example.com", role = c("aut", "cre"))
