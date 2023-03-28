@@ -12,5 +12,6 @@ saspy <- NULL
 #'
 #' @keywords internal
 .onLoad <- function(libname, pkgname) {
+  options("sascfg" = "sascfg_personal.py")
   saspy <<- import("saspy", delay_load = TRUE)
 }
