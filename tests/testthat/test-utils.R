@@ -81,3 +81,56 @@ test_that("get_sas_cfg works as expected", {
   on.exit(file.remove(tmp))
   expect_identical(get_sas_cfg(), tmp)
 })
+
+# install_saspy ----
+
+test_that("install_saspy works", {
+  skip_if_not_installed("mockery")
+  mockery::stub(install_saspy, "askYesNo", function(...) TRUE)
+  mockery::stub(install_saspy, "reticulate::py_install", function(...) TRUE)
+  expect_identical(
+    install_saspy(),
+    TRUE
+  )
+
+  mockery::stub(install_saspy, "askYesNo", function(...) FALSE)
+  expect_error(
+    install_saspy(),
+    "Installation of saspy cancelled"
+  )
+})
+
+# get_sas_session ----
+
+test_that("get_sas_session works", {
+  skip_if_not_installed("mockery")
+  .sasr_env$.sas_session <- NULL
+  mockery::stub(get_sas_session, "sas_session_ssh", function(...) TRUE)
+  expect_true(
+    get_sas_session()
+  )
+  .sasr_env$.sas_session <- NULL
+  mockery::stub(get_sas_session, "sas_session_ssh", function(...) NULL)
+  expect_error(
+    get_sas_session(),
+    "SAS session not established"
+  )
+  .sasr_env$.sas_session <- NULL
+})
+
+# sas_session_ssh ----
+
+test_that("sas_session_ssh works", {
+  skip_if_not_installed("mockery")
+  mockery::stub(sas_session_ssh, "saspy$SASsession", function(...) TRUE)
+  mockery::stub(sas_session_ssh, "validate_sascfg", function(...) TRUE)
+  expect_true(sas_session_ssh("test"))
+})
+
+# get_sas_cfg ----
+
+test_that("get_sas_cfg works", {
+  options("sascfg" = "non_existing_file")
+  on.exit({options(sascfg = NULL)})
+  expect_null(get_sas_cfg())
+})
