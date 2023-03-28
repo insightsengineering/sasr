@@ -131,6 +131,8 @@ test_that("sas_session_ssh works", {
 
 test_that("get_sas_cfg works", {
   options("sascfg" = "non_existing_file")
-  on.exit({options(sascfg = NULL)})
+  on.exit({
+    options(sascfg = NULL)
+  })
   expect_null(get_sas_cfg())
 })
