@@ -1,5 +1,7 @@
 # sasr
 
+<img src="man/figures/sasr-logo.svg" align="right" alt="" width="180">
+
 <!-- start badges -->
 [![Code Coverage](https://raw.githubusercontent.com/insightsengineering/sasr/_xml_coverage_reports/data/main/badge.svg)](https://raw.githubusercontent.com/insightsengineering/sasr/_xml_coverage_reports/data/main/coverage.xml)
 <!-- end badges -->
