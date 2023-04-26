@@ -9,7 +9,7 @@ Authors@R: c(
     person("F. Hoffmann-La Roche AG", role = c("cph", "fnd"))
   )
 Description: SAS interface to execute SAS code remotely and retrieve results in R.
-License: Apache License 2.0 | file LICENSE
+License: Apache License 2.0
 URL: https://github.com/insightsengineering/sasr/
 BugReports: https://github.com/insightsengineering/sasr/issues
 Depends:
