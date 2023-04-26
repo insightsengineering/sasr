@@ -3,10 +3,11 @@ Package: sasr
 Title: SAS Interface in R
 Version: 0.1.0
 Date: 2023-04-26
-Authors@R:
+Authors@R: c(
     person("Liming", "Li", , "liming.li@roche.com", role = c("aut", "cre")),
     person("Daniel", "Sabanes Bove", , "daniel.sabanes_bove@roche.com", role = c("aut")),
     person("F. Hoffmann-La Roche AG", role = c("cph", "fnd"))
+  )
 Description: SAS interface to execute SAS code remotely and retrieve results in R.
 License: Apache License 2.0 | file LICENSE
 URL: https://github.com/insightsengineering/sasr/
