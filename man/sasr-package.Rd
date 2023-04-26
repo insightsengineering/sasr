@@ -16,7 +16,3 @@ Useful links:
 }
 
 }
-\author{
-\strong{Maintainer}: insightsengineering \email{insightsengineering@example.com}
-
-}
