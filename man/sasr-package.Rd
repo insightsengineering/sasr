@@ -17,6 +17,16 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: insightsengineering \email{insightsengineering@example.com}
+\strong{Maintainer}: Liming Li \email{liming.li@roche.com}
+
+Authors:
+\itemize{
+  \item Daniel Sabanes Bove \email{daniel.sabanes_bove@roche.com}
+}
+
+Other contributors:
+\itemize{
+  \item F. Hoffmann-La Roche AG [copyright holder, funder]
+}
 
 }

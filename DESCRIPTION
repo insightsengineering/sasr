@@ -1,12 +1,17 @@
 Type: Package
 Package: sasr
-Title: sasr
-Version: 0.0.0.9004
-Date: 2023-03-28
-Authors@R:
-    person("insightsengineering", , , "insightsengineering@example.com", role = c("aut", "cre"))
-Description: sasr.
-License: Apache License 2.0 | file LICENSE
+Title: SAS Interface in R
+Version: 0.1.0
+Date: 2023-04-26
+Authors@R: c(
+    person("Liming", "Li", , "liming.li@roche.com", role = c("aut", "cre")),
+    person("Daniel", "Sabanes Bove", , "daniel.sabanes_bove@roche.com", role = c("aut")),
+    person("F. Hoffmann-La Roche AG", role = c("cph", "fnd"))
+  )
+Description: Provides a SAS interface in R, through 'SASpy'(<https://sassoftware.github.io/saspy/>) and 'reticulate'(<https://rstudio.github.io/reticulate/>).
+  This package helps you create SAS sessions, execute SAS code in remote SAS servers, retrieve execution results and log, and exchange datasets between SAS and R.
+  It also helps you to install 'SASpy' and create a configuration file for the connection. Please review the 'SASpy' license file as instructed so that you comply with its separate and independent license.
+License: Apache License 2.0
 URL: https://github.com/insightsengineering/sasr/
 BugReports: https://github.com/insightsengineering/sasr/issues
 Depends:
