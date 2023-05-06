@@ -16,3 +16,18 @@ Useful links:
 }
 
 }
+\author{
+\strong{Maintainer}: Liming Li \email{liming.li@roche.com}
+
+Authors:
+\itemize{
+  \item Daniel Sabanes Bove \email{daniel.sabanes_bove@roche.com}
+  \item Isaac Gravestock \email{isaac.gravestock@roche.com}
+}
+
+Other contributors:
+\itemize{
+  \item F. Hoffmann-La Roche AG [copyright holder, funder]
+}
+
+}
