@@ -1,11 +1,12 @@
 Type: Package
 Package: sasr
 Title: SAS Interface in R
-Version: 0.1.0
+Version: 0.1.1
 Date: 2023-04-26
 Authors@R: c(
     person("Liming", "Li", , "liming.li@roche.com", role = c("aut", "cre")),
     person("Daniel", "Sabanes Bove", , "daniel.sabanes_bove@roche.com", role = c("aut")),
+    person("Isaac", "Gravestock", , "isaac.gravestock@roche.com", role = c("aut"))
     person("F. Hoffmann-La Roche AG", role = c("cph", "fnd"))
   )
 Description: Provides a SAS interface in R, through 'SASpy'(<https://sassoftware.github.io/saspy/>) and 'reticulate'(<https://rstudio.github.io/reticulate/>).
