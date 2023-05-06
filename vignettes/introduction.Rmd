@@ -22,7 +22,7 @@ editor_options:
 
 ## Documentations
 
-For functionality wrapped in `sasr`, you can find the documentations through R documentation system, or through online [documentaion page](https://insightsengineering.github.io/sasr/latest-tag/).
+For functionality wrapped in `sasr`, you can find the documentations through R documentation system, or through online [documentation page](https://insightsengineering.github.io/sasr/latest-tag/).
 However, there can be some other arguments not documented(in `...`), and these arguments are described in `saspy` [documentation page](https://sassoftware.github.io/saspy/).
 
 ## Short Tutorial
