@@ -35,7 +35,7 @@
     
     <a class="navbar-brand me-2" href="index.html">sasr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,6 +47,12 @@
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
 </li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="articles/introduction.html">Introduction to `sasr`</a>
+  </div>
+</li>
 <li class="nav-item">
   <a class="nav-link" href="news/index.html">Changelog</a>
 </li>
@@ -56,6 +62,7 @@
           aria-expanded="false" aria-haspopup="true"
           id="dropdown-versions">Versions</a> <div class="dropdown-menu" aria-labelledby="dropdown-versions"> <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/v0.1.1">v0.1.1</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/v0.1.0">v0.1.0</a> </div></li>
 <!-- end dropdown for versions -->
       </ul>
@@ -106,70 +113,6 @@
 <pre class="{r}"><code><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/insightsengineering/sasr/" class="external-link">sasr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/install_saspy.html">install_saspy</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
 <p>After the installation completes, you are ready to use <code>sasr</code> package.</p>
-</div>
-<div class="section level2">
-<h2 id="short-tutorial">Short Tutorial<a class="anchor" aria-label="anchor" href="#short-tutorial"></a>
-</h2>
-<p>To use <code>sasr</code>, you need to follow these steps</p>
-<ol style="list-style-type: decimal">
-<li>Configure your SAS server in <code>sascfg_personal.py</code> under your working directory or the home directory. This is the default file that <code>sasr</code> will look at. However, you can still change that through <code>options(sascfg = )</code>, then <code>sasr</code> will try to find any name that is available in your specified option.
-<ol style="list-style-type: decimal">
-<li>If you don’t know how to create this file, use <code><a href="reference/sascfg.html">sascfg()</a></code> to create the file. Required arguments include <code>host</code> and <code>saspath</code>.
-<ol style="list-style-type: decimal">
-<li>
-<code><a href="reference/sascfg.html">sascfg()</a></code> only creates ssh based SAS session.</li>
-<li>Only password-less ssh connection is supported, e.g. ssh via public keys.</li>
-<li>
-<code>host</code> is the hostname of the SAS server.</li>
-<li>
-<code>saspath</code> is the SAS executable path on the SAS server.</li>
-<li>Other arguments are added to the configuration file directly.</li>
-<li>
-<code>tunnel</code> and <code>rtunnel</code> are required if you want to transfer datasets between R and SAS. Use integers like <code>tunnel = 9999L</code> in R, or modify <code>sascfg_personal.py</code> to make sure they are integers.</li>
-</ol>
-</li>
-<li>You can create the configuration by yourself and then SAS connection will not be restricted to ssh.</li>
-<li>You can have multiple configuration files with different file names</li>
-</ol>
-</li>
-<li>Create the SAS session based on the configuration file
-<ol style="list-style-type: decimal">
-<li>To use the default connection specified in the configuration file, you can run any command like <code>run_sas</code>, <code>df2sd</code> or <code>sd2df</code>.
-<ol style="list-style-type: decimal">
-<li>The session will be created if there is no session available stored in <code>.sasr_env$.sas_session</code>
-</li>
-<li>If <code>.sasr_env$.sas_session</code> is created, this session will be used by default.</li>
-<li>Do not create any variable called <code>.sas_session</code> in environment <code>sasr:::.sasr_env</code>
-</li>
-</ol>
-</li>
-<li>To create the session manually, you can call <code><a href="reference/sas_session_ssh.html">sas_session_ssh()</a></code>
-<ol style="list-style-type: decimal">
-<li>
-<code>SAS_session</code> have one argument <code>sascfg</code>, pointing to the SAS session configuration file.</li>
-</ol>
-</li>
-<li>To use multiple sessions, you need to store the session <code>your_session &lt;- sas_session_ssh(sascfg)</code>
-</li>
-</ol>
-</li>
-<li>Transfer the datasets from R to SAS using <code>df2sd</code>
-<ol style="list-style-type: decimal">
-<li>Tunneling must be enabled to transfer datasets.</li>
-<li>The variable names of the datasets should not contain dots otherwise SAS may not recognize.</li>
-<li>The index (row names) will not be transferred to SAS.</li>
-</ol>
-</li>
-<li>Use <code>run_sas</code> to submit SAS code to the SAS server.
-<ol style="list-style-type: decimal">
-<li>The returned value is a named list, <code>LST</code> is the result and <code>LOG</code> is the log file</li>
-<li>
-<code>run_sas</code> has argument <code>results=</code>, it can be either “TEXT” or “HTML”. This argument decides the LST format.</li>
-</ol>
-</li>
-<li>Transfer SAS datasets back to R use <code>sd2df</code>
-</li>
-</ol>
 <div class="section level3">
 <h3 id="short-example">Short Example<a class="anchor" aria-label="anchor" href="#short-example"></a>
 </h3>
@@ -220,6 +163,7 @@
 <ul class="list-unstyled">
 <li>Liming Li <br><small class="roles"> Author, maintainer </small>  </li>
 <li>Daniel Sabanes Bove <br><small class="roles"> Author </small>  </li>
+<li>Isaac Gravestock <br><small class="roles"> Author </small>  </li>
 <li>F. Hoffmann-La Roche AG <br><small class="roles"> Copyright holder, funder </small>  </li>
 </ul>
 </div>
@@ -232,7 +176,7 @@
 
     <footer><div class="pkgdown-footer-left">
   <p></p>
-<p>Developed by Liming Li, Daniel Sabanes Bove, F. Hoffmann-La Roche AG.</p>
+<p>Developed by Liming Li, Daniel Sabanes Bove, Isaac Gravestock, F. Hoffmann-La Roche AG.</p>
 </div>
 
 <div class="pkgdown-footer-right">
