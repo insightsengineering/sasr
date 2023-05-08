@@ -22,6 +22,7 @@ Useful links:
 Authors:
 \itemize{
   \item Daniel Sabanes Bove \email{daniel.sabanes_bove@roche.com}
+  \item Isaac Gravestock \email{isaac.gravestock@roche.com}
 }
 
 Other contributors:

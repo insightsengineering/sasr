@@ -1,4 +1,4 @@
-# sasr 0.1.0
+# sasr 0.1.1
 
 * First CRAN version of the package.
 * The package facilitates the execution of SAS code from R.
