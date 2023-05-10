@@ -12,6 +12,8 @@
 #' @param sascfg (`character`)\cr target file of configuration.
 #' @param options (`list`)\cr additional list of arguments to pass to `ssh` command.
 #'
+#' @return No return value.
+#'
 #' @export
 #' @details
 #' `host` and `saspath` are required to connect to remote SAS server. Other arguments can follow default.
