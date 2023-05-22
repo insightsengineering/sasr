@@ -6,6 +6,9 @@
 \usage{
 get_sas_session()
 }
+\value{
+A new SAS session if there are no previous SAS session, or the last SAS session created.
+}
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 Obtain the last session or default session.

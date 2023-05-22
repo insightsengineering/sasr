@@ -6,6 +6,7 @@
 #' @param method (`character`)\cr method to install `saspy`.
 #' @param conda (`character`)\cr path to `conda` executable.
 #'
+#' @return No return value.
 #' @export
 install_saspy <- function(method = "auto", conda = "auto") {
   msg <- paste0(
@@ -114,6 +115,7 @@ validate_sascfg <- function(sascfg) {
 #' @details this function is designed to facilitate the R users programming practice
 #' of function oriented programming instead of object oriented programmings.
 #'
+#' @return A new SAS session if there are no previous SAS session, or the last SAS session created.
 #' @export
 get_sas_session <- function() {
   if (is.null(.sasr_env$.sas_session)) {
@@ -139,6 +141,7 @@ get_sas_session <- function() {
 #'
 #' @param sascfg (`character`)\cr SAS session configuration.
 #'
+#' @return SAS session.
 #' @export
 sas_session_ssh <- function(sascfg = get_sas_cfg()) {
   validate_sascfg(sascfg)
@@ -155,6 +158,8 @@ sas_session_ssh <- function(sascfg = get_sas_cfg()) {
 #' @details Obtain the default sas configuration file. By default, it will search
 #' the `sascfg_personal.py` file under current directory. If it does not exist, it will
 #' search this file under home directory. If this file does not exist, NULL will be returned.
+#'
+#' @return The file path of default SAS configuration file, or NULL if not found.
 #'
 #' @export
 get_sas_cfg <- function() {

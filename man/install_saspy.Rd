@@ -11,6 +11,9 @@ install_saspy(method = "auto", conda = "auto")
 
 \item{conda}{(\code{character})\cr path to \code{conda} executable.}
 }
+\value{
+No return value.
+}
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 Install \code{saspy} module in \code{reticulate}.

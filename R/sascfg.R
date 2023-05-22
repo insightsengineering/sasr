@@ -12,6 +12,8 @@
 #' @param sascfg (`character`)\cr target file of configuration.
 #' @param options (`list`)\cr additional list of arguments to pass to `ssh` command.
 #'
+#' @return No return value.
+#'
 #' @export
 #' @details
 #' `host` and `saspath` are required to connect to remote SAS server. Other arguments can follow default.
@@ -27,4 +29,5 @@ sascfg <- function(name = "default", host, saspath, ssh = system("which ssh", in
   writeLines(sprintf("SAS_config_names=['%s']", name), con = f)
   writeLines(sprintf("%s=%s", name, toString(r_to_py(lst))), f)
   close(f)
+  invisible()
 }

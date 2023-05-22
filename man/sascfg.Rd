@@ -32,6 +32,9 @@ sascfg(
 
 \item{sascfg}{(\code{character})\cr target file of configuration.}
 }
+\value{
+No return value.
+}
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 Create SAS session configuration file based on argument.

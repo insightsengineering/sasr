@@ -9,6 +9,9 @@ sas_session_ssh(sascfg = get_sas_cfg())
 \arguments{
 \item{sascfg}{(\code{character})\cr SAS session configuration.}
 }
+\value{
+SAS session.
+}
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 Create a SAS ssh session.

@@ -6,6 +6,9 @@
 \usage{
 get_sas_cfg()
 }
+\value{
+The file path of default SAS configuration file, or NULL if not found.
+}
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 Obtain the file path of the SAS configuration file.
