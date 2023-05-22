@@ -29,4 +29,5 @@ sascfg <- function(name = "default", host, saspath, ssh = system("which ssh", in
   writeLines(sprintf("SAS_config_names=['%s']", name), con = f)
   writeLines(sprintf("%s=%s", name, toString(r_to_py(lst))), f)
   close(f)
+  invisible()
 }
