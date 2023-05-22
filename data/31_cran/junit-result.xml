@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="run_sas" timestamp="2023-05-22T02:52:30Z" hostname="70f1e8e5cddb" tests="3" skipped="3" failures="0" errors="0" time="0.303">
-    <testcase time="0.131" classname="run_sas" name="run_sas_call_the_correct_method">
+  <testsuite name="run_sas" timestamp="2023-05-22T03:01:16Z" hostname="1f53e31ffb15" tests="3" skipped="3" failures="0" errors="0" time="0.188">
+    <testcase time="0.083" classname="run_sas" name="run_sas_call_the_correct_method">
       <skipped message="Reason: On CRAN ('test-run_sas.R:4:3')"/>
     </testcase>
-    <testcase time="0.0960000000000001" classname="run_sas" name="df2sd_call_the_correct_method">
+    <testcase time="0.0600000000000001" classname="run_sas" name="df2sd_call_the_correct_method">
       <skipped message="Reason: On CRAN ('test-run_sas.R:9:3')"/>
     </testcase>
-    <testcase time="0.0760000000000001" classname="run_sas" name="sd2df_call_the_correct_method">
+    <testcase time="0.0450000000000002" classname="run_sas" name="sd2df_call_the_correct_method">
       <skipped message="Reason: On CRAN ('test-run_sas.R:15:3')"/>
     </testcase>
   </testsuite>
-  <testsuite name="sascfg" timestamp="2023-05-22T02:52:30Z" hostname="70f1e8e5cddb" tests="1" skipped="1" failures="0" errors="0" time="0.235">
-    <testcase time="0.235" classname="sascfg" name="sascfg_creates_sas_configuration_file">
+  <testsuite name="sascfg" timestamp="2023-05-22T03:01:16Z" hostname="1f53e31ffb15" tests="1" skipped="1" failures="0" errors="0" time="0.148">
+    <testcase time="0.148" classname="sascfg" name="sascfg_creates_sas_configuration_file">
       <skipped message="Reason: py_available(TRUE) is not TRUE ('test-sascfg.R:4:3')"/>
     </testcase>
   </testsuite>
-  <testsuite name="session" timestamp="2023-05-22T02:52:31Z" hostname="70f1e8e5cddb" tests="1" skipped="0" failures="0" errors="0" time="0.114">
-    <testcase time="0.114" classname="session" name="get_sas_session_returns_the_.sas_session"/>
+  <testsuite name="session" timestamp="2023-05-22T03:01:16Z" hostname="1f53e31ffb15" tests="1" skipped="0" failures="0" errors="0" time="0.072">
+    <testcase time="0.0720000000000001" classname="session" name="get_sas_session_returns_the_.sas_session"/>
   </testsuite>
-  <testsuite name="utils" timestamp="2023-05-22T02:52:31Z" hostname="70f1e8e5cddb" tests="18" skipped="1" failures="0" errors="0" time="0.226">
-    <testcase time="0.0300000000000002" classname="utils" name="validate_data_will_give_errors_if_._exist"/>
-    <testcase time="0.00299999999999967" classname="utils" name="validate_data_will_give_errors_if_._exist"/>
-    <testcase time="0.0270000000000001" classname="utils" name="validate_data_drop_row_names_and_give_warnings"/>
-    <testcase time="0.00499999999999989" classname="utils" name="validate_data_drop_row_names_and_give_warnings"/>
-    <testcase time="0.0140000000000002" classname="utils" name="validate_ssh_with_tunnel_works_as_expected_for_a_dummy_session"/>
-    <testcase time="0.0129999999999999" classname="utils" name="validate_ssh_with_tunnel_fails_when_either_tunnel_or_rtunnle_is_not_there"/>
-    <testcase time="0.00700000000000012" classname="utils" name="validate_ssh_with_tunnel_fails_when_either_tunnel_or_rtunnle_is_not_there"/>
-    <testcase time="0.0089999999999999" classname="utils" name="validate_sascfg_works_if_file_exists"/>
-    <testcase time="0.0129999999999999" classname="utils" name="validate_sascfg_warns_if_given_NULL"/>
-    <testcase time="0.0140000000000002" classname="utils" name="validate_sascfg_errors_if_given_non_existing_file"/>
-    <testcase time="0.0109999999999997" classname="utils" name="get_sas_cfg_works_as_expected"/>
-    <testcase time="0.00200000000000022" classname="utils" name="get_sas_cfg_works_as_expected">
+  <testsuite name="utils" timestamp="2023-05-22T03:01:16Z" hostname="1f53e31ffb15" tests="18" skipped="1" failures="0" errors="0" time="0.136">
+    <testcase time="0.02" classname="utils" name="validate_data_will_give_errors_if_._exist"/>
+    <testcase time="0.00299999999999989" classname="utils" name="validate_data_will_give_errors_if_._exist"/>
+    <testcase time="0.00900000000000012" classname="utils" name="validate_data_drop_row_names_and_give_warnings"/>
+    <testcase time="0.00299999999999989" classname="utils" name="validate_data_drop_row_names_and_give_warnings"/>
+    <testcase time="0.00500000000000012" classname="utils" name="validate_ssh_with_tunnel_works_as_expected_for_a_dummy_session"/>
+    <testcase time="0.00799999999999979" classname="utils" name="validate_ssh_with_tunnel_fails_when_either_tunnel_or_rtunnle_is_not_there"/>
+    <testcase time="0.0110000000000001" classname="utils" name="validate_ssh_with_tunnel_fails_when_either_tunnel_or_rtunnle_is_not_there"/>
+    <testcase time="0.004" classname="utils" name="validate_sascfg_works_if_file_exists"/>
+    <testcase time="0.00800000000000001" classname="utils" name="validate_sascfg_warns_if_given_NULL"/>
+    <testcase time="0.00800000000000001" classname="utils" name="validate_sascfg_errors_if_given_non_existing_file"/>
+    <testcase time="0.0069999999999999" classname="utils" name="get_sas_cfg_works_as_expected"/>
+    <testcase time="0.00100000000000011" classname="utils" name="get_sas_cfg_works_as_expected">
       <skipped message="Reason: On CRAN ('test-utils.R:71:3')"/>
     </testcase>
-    <testcase time="0.028" classname="utils" name="install_saspy_works"/>
-    <testcase time="0.00800000000000001" classname="utils" name="install_saspy_works"/>
-    <testcase time="0.0110000000000001" classname="utils" name="get_sas_session_works"/>
-    <testcase time="0.00800000000000001" classname="utils" name="get_sas_session_works"/>
-    <testcase time="0.0109999999999997" classname="utils" name="sas_session_ssh_works"/>
-    <testcase time="0.012" classname="utils" name="get_sas_cfg_works"/>
+    <testcase time="0.0189999999999999" classname="utils" name="install_saspy_works"/>
+    <testcase time="0.00500000000000012" classname="utils" name="install_saspy_works"/>
+    <testcase time="0.0069999999999999" classname="utils" name="get_sas_session_works"/>
+    <testcase time="0.00600000000000001" classname="utils" name="get_sas_session_works"/>
+    <testcase time="0.00600000000000001" classname="utils" name="sas_session_ssh_works"/>
+    <testcase time="0.00600000000000023" classname="utils" name="get_sas_cfg_works"/>
   </testsuite>
 </testsuites>
