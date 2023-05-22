@@ -115,7 +115,7 @@ validate_sascfg <- function(sascfg) {
 #' @details this function is designed to facilitate the R users programming practice
 #' of function oriented programming instead of object oriented programmings.
 #'
-#' @return SAS session.
+#' @return A new SAS session if there are no previous SAS session, or the last SAS session created.
 #' @export
 get_sas_session <- function() {
   if (is.null(.sasr_env$.sas_session)) {
