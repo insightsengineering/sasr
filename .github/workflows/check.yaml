@@ -46,7 +46,6 @@ jobs:
     name: gitleaks 💧
     uses: insightsengineering/r.pkg.template/.github/workflows/gitleaks.yaml@main
   spelling:
-    if: github.event_name != 'push'
     name: Spell Check 🆎
     uses: insightsengineering/r.pkg.template/.github/workflows/spelling.yaml@main
   links:
