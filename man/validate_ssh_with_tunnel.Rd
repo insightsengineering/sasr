@@ -16,7 +16,7 @@ validate_ssh_with_tunnel(
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
-Validate if the SAS session has tunnels enabled.
+Validate if the SAS session has tunnels enabled if it is ssh connection.
 
 SAS session must enable tunnels to transfer datasets. If not used, a error will pop up.
 }

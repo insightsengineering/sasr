@@ -25,7 +25,7 @@ install_saspy <- function(method = "auto", conda = "auto") {
 #' Validate the SAS ssh Session Has Tunnels
 #'
 #' @description `r lifecycle::badge("experimental")`
-#' Validate if the SAS session has tunnels enabled.
+#' Validate if the SAS session has tunnels enabled if it is ssh connection.
 #'
 #' @param session (`saspy.sasbase.SASsession`) SAS session.
 #' @param msg (`character`)\cr message to display.
@@ -34,9 +34,11 @@ install_saspy <- function(method = "auto", conda = "auto") {
 #'
 #' @keywords internal
 validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh must use tunnels to transfer datasets!") {
-  cfgname <- session$sascfg$SAScfg$SAS_config_names[1]
+  cfgname <- session$sascfg$name
+  is_ssh <- identical(session$sascfg$mode, "ssh")
+  assert_subset(cfgname, names(session$sascfg$SAScfg))
   cfg <- session$sascfg$SAScfg[[cfgname]]
-  if (is.null(cfg$tunnel) || is.null(cfg$rtunnel)) {
+  if (is_ssh && (is.null(cfg$tunnel) || is.null(cfg$rtunnel))) {
     stop(msg)
   }
 }
