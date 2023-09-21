@@ -92,12 +92,12 @@ test_that("install_saspy works", {
 test_that("get_sas_session works", {
   skip_if_not_installed("mockery")
   .sasr_env$.sas_session <- NULL
-  mockery::stub(get_sas_session, "sas_session_ssh", function(...) TRUE)
+  mockery::stub(get_sas_session, "sas_session", function(...) TRUE)
   expect_true(
     get_sas_session()
   )
   .sasr_env$.sas_session <- NULL
-  mockery::stub(get_sas_session, "sas_session_ssh", function(...) NULL)
+  mockery::stub(get_sas_session, "sas_session", function(...) NULL)
   expect_error(
     get_sas_session(),
     "SAS session not established"
@@ -105,13 +105,13 @@ test_that("get_sas_session works", {
   .sasr_env$.sas_session <- NULL
 })
 
-# sas_session_ssh ----
+# sas_session ----
 
-test_that("sas_session_ssh works", {
+test_that("sas_session works", {
   skip_if_not_installed("mockery")
-  mockery::stub(sas_session_ssh, "saspy$SASsession", function(...) TRUE)
-  mockery::stub(sas_session_ssh, "validate_sascfg", function(...) TRUE)
-  expect_true(sas_session_ssh("test"))
+  mockery::stub(sas_session, "saspy$SASsession", function(...) TRUE)
+  mockery::stub(sas_session, "validate_sascfg", function(...) TRUE)
+  expect_true(sas_session("test"))
 })
 
 # get_sas_cfg ----
