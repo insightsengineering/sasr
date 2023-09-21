@@ -22,27 +22,6 @@ install_saspy <- function(method = "auto", conda = "auto") {
   reticulate::py_install("saspy", method = method, conda = conda)
 }
 
-#' Validate the SAS ssh Session Has Tunnels
-#'
-#' @description `r lifecycle::badge("experimental")`
-#' Validate if the SAS session has tunnels enabled if it is ssh connection.
-#'
-#' @param session (`saspy.sasbase.SASsession`) SAS session.
-#' @param msg (`character`)\cr message to display.
-#'
-#' @description SAS session must enable tunnels to transfer datasets. If not used, a error will pop up.
-#'
-#' @keywords internal
-validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh must use tunnels to transfer datasets!") {
-  cfgname <- session$sascfg$name
-  is_ssh <- identical(session$sascfg$mode, "ssh")
-  assert_subset(cfgname, names(session$sascfg$SAScfg))
-  cfg <- session$sascfg$SAScfg[[cfgname]]
-  if (is_ssh && (is.null(cfg$tunnel) || is.null(cfg$rtunnel))) {
-    stop(msg)
-  }
-}
-
 #' Validate and Process `data.frame` for SAS
 #'
 #' @description `r lifecycle::badge("experimental")`

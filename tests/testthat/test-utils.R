@@ -27,21 +27,6 @@ test_that("validate_data drop row names and give warnings", {
   expect_identical(row.names(df2), "1")
 })
 
-# validate_ssh_with_tunnel ----
-test_that("validate_ssh_with_tunnel works as expected for a dummy session", {
-  session <- list(sascfg = list(name = "a", SAScfg = list(a = list(tunnel = 123L, rtunnel = 321L))))
-  expect_silent(validate_ssh_with_tunnel(session))
-})
-
-test_that("validate_ssh_with_tunnel fails when either tunnel or rtunnle is not there", {
-  session <- list(sascfg = list(name = "a", mode = "ssh", SAScfg = list(a = list(tunnel = 123L))))
-  expect_error(validate_ssh_with_tunnel(session, "wrong"), "wrong")
-  session <- list(sascfg = list(name = "a", mode = "ssh", SAScfg = list(a = list(rtunnel = 123L))))
-  expect_error(validate_ssh_with_tunnel(session, "wrong"), "wrong")
-  session <- list(sascfg = list(name = "a", mode = "http", SAScfg = list(a = list(rtunnel = 123L))))
-  expect_silent(validate_ssh_with_tunnel(session, "wrong"))
-})
-
 # validate_sascfg ----
 
 test_that("validate_sascfg works if file exists", {
