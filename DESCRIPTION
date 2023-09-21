@@ -29,6 +29,7 @@ Imports:
     reticulate
 Suggests:
     knitr,
+    rmarkdown,
     mockery,
     testthat (>= 3.0.0)
 VignetteBuilder:
