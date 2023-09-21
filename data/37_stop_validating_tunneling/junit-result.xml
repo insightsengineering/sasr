@@ -1,49 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="run_sas" timestamp="2023-09-21T02:11:06Z" hostname="34938a132f6c" tests="3" skipped="3" failures="0" errors="0" time="0.294">
-    <testcase time="0.111" classname="run_sas" name="run_sas_call_the_correct_method">
+  <testsuite name="run_sas" timestamp="2023-09-21T02:25:24Z" hostname="235de6e549ee" tests="3" skipped="3" failures="0" errors="0" time="0.222">
+    <testcase time="0.0800000000000001" classname="run_sas" name="run_sas_call_the_correct_method">
       <skipped message="Reason: On CRAN ('test-run_sas.R:4:3')"/>
     </testcase>
-    <testcase time="0.127" classname="run_sas" name="df2sd_call_the_correct_method">
+    <testcase time="0.099" classname="run_sas" name="df2sd_call_the_correct_method">
       <skipped message="Reason: On CRAN ('test-run_sas.R:9:3')"/>
     </testcase>
-    <testcase time="0.056" classname="run_sas" name="sd2df_call_the_correct_method">
+    <testcase time="0.0429999999999999" classname="run_sas" name="sd2df_call_the_correct_method">
       <skipped message="Reason: On CRAN ('test-run_sas.R:15:3')"/>
     </testcase>
   </testsuite>
-  <testsuite name="sascfg" timestamp="2023-09-21T02:11:06Z" hostname="34938a132f6c" tests="1" skipped="1" failures="0" errors="0" time="0.207">
-    <testcase time="0.207" classname="sascfg" name="sascfg_creates_sas_configuration_file">
+  <testsuite name="sascfg" timestamp="2023-09-21T02:25:24Z" hostname="235de6e549ee" tests="1" skipped="1" failures="0" errors="0" time="0.159">
+    <testcase time="0.159" classname="sascfg" name="sascfg_creates_sas_configuration_file">
       <skipped message="Reason: py_available(TRUE) is not TRUE ('test-sascfg.R:4:3')"/>
     </testcase>
   </testsuite>
-  <testsuite name="session" timestamp="2023-09-21T02:11:06Z" hostname="34938a132f6c" tests="1" skipped="0" failures="0" errors="0" time="0.04">
-    <testcase time="0.04" classname="session" name="get_sas_session_returns_the_.sas_session"/>
+  <testsuite name="session" timestamp="2023-09-21T02:25:25Z" hostname="235de6e549ee" tests="1" skipped="0" failures="0" errors="0" time="0.031">
+    <testcase time="0.0310000000000001" classname="session" name="get_sas_session_returns_the_.sas_session"/>
   </testsuite>
-  <testsuite name="utils" timestamp="2023-09-21T02:11:06Z" hostname="34938a132f6c" tests="15" skipped="1" failures="0" errors="1" time="0.197">
-    <testcase time="0.0269999999999997" classname="utils" name="validate_data_will_give_errors_if_._exist"/>
-    <testcase time="0.00300000000000011" classname="utils" name="validate_data_will_give_errors_if_._exist"/>
-    <testcase time="0.0129999999999999" classname="utils" name="validate_data_drop_row_names_and_give_warnings"/>
-    <testcase time="0.00500000000000034" classname="utils" name="validate_data_drop_row_names_and_give_warnings"/>
-    <testcase time="0.00799999999999956" classname="utils" name="validate_sascfg_works_if_file_exists"/>
-    <testcase time="0.0130000000000003" classname="utils" name="validate_sascfg_warns_if_given_NULL"/>
-    <testcase time="0.0129999999999999" classname="utils" name="validate_sascfg_errors_if_given_non_existing_file"/>
-    <testcase time="0.0169999999999999" classname="utils" name="get_sas_cfg_works_as_expected"/>
-    <testcase time="0.00200000000000022" classname="utils" name="get_sas_cfg_works_as_expected">
+  <testsuite name="utils" timestamp="2023-09-21T02:25:25Z" hostname="235de6e549ee" tests="15" skipped="1" failures="0" errors="0" time="0.133">
+    <testcase time="0.0209999999999999" classname="utils" name="validate_data_will_give_errors_if_._exist"/>
+    <testcase time="0.00299999999999989" classname="utils" name="validate_data_will_give_errors_if_._exist"/>
+    <testcase time="0.01" classname="utils" name="validate_data_drop_row_names_and_give_warnings"/>
+    <testcase time="0.004" classname="utils" name="validate_data_drop_row_names_and_give_warnings"/>
+    <testcase time="0.00600000000000001" classname="utils" name="validate_sascfg_works_if_file_exists"/>
+    <testcase time="0.01" classname="utils" name="validate_sascfg_warns_if_given_NULL"/>
+    <testcase time="0.01" classname="utils" name="validate_sascfg_errors_if_given_non_existing_file"/>
+    <testcase time="0.0130000000000001" classname="utils" name="get_sas_cfg_works_as_expected"/>
+    <testcase time="0.00099999999999989" classname="utils" name="get_sas_cfg_works_as_expected">
       <skipped message="Reason: On CRAN ('test-utils.R:58:3')"/>
     </testcase>
-    <testcase time="0.0249999999999999" classname="utils" name="install_saspy_works"/>
-    <testcase time="0.00599999999999978" classname="utils" name="install_saspy_works"/>
-    <testcase time="0.012" classname="utils" name="get_sas_session_works"/>
-    <testcase time="0.00600000000000023" classname="utils" name="get_sas_session_works"/>
-    <testcase time="0.0139999999999998" classname="utils" name="sas_session_works">
-      <error type="error" message="Error in `sas_session(&quot;test&quot;)`: object 'sas' not found ('test-utils.R:114:3')">Error in `sas_session("test")`: object 'sas' not found
-Backtrace:
-    x
- 1. +-testthat::expect_true(sas_session("test")) at test-utils.R:114:2
- 2. | \-testthat::quasi_label(enquo(object), label, arg = "object")
- 3. |   \-rlang::eval_bare(expr, quo_get_env(quo))
- 4. \-sasr::sas_session("test")</error>
-    </testcase>
-    <testcase time="0.0329999999999999" classname="utils" name="get_sas_cfg_works"/>
+    <testcase time="0.0190000000000001" classname="utils" name="install_saspy_works"/>
+    <testcase time="0.00600000000000001" classname="utils" name="install_saspy_works"/>
+    <testcase time="0.00800000000000001" classname="utils" name="get_sas_session_works"/>
+    <testcase time="0.00499999999999989" classname="utils" name="get_sas_session_works"/>
+    <testcase time="0.00900000000000012" classname="utils" name="sas_session_works"/>
+    <testcase time="0.00799999999999979" classname="utils" name="get_sas_cfg_works"/>
   </testsuite>
 </testsuites>
