@@ -25,6 +25,7 @@ Depends:
     R (>= 3.6)
 Imports:
     checkmate,
+    lifecycle,
     reticulate
 Suggests:
     knitr,
