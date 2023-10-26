@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{sas_session_ssh}
 \alias{sas_session_ssh}
-\title{Create SAS ssh Session Based on Configuration File}
+\title{Create SAS Session Based on Configuration File}
 \usage{
 sas_session_ssh(sascfg = get_sas_cfg())
 }
@@ -13,6 +13,5 @@ sas_session_ssh(sascfg = get_sas_cfg())
 SAS session.
 }
 \description{
-\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
-Create a SAS ssh session.
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 }

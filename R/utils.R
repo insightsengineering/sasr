@@ -22,25 +22,6 @@ install_saspy <- function(method = "auto", conda = "auto") {
   reticulate::py_install("saspy", method = method, conda = conda)
 }
 
-#' Validate the SAS ssh Session Has Tunnels
-#'
-#' @description `r lifecycle::badge("experimental")`
-#' Validate if the SAS session has tunnels enabled.
-#'
-#' @param session (`saspy.sasbase.SASsession`) SAS session.
-#' @param msg (`character`)\cr message to display.
-#'
-#' @description SAS session must enable tunnels to transfer datasets. If not used, a error will pop up.
-#'
-#' @keywords internal
-validate_ssh_with_tunnel <- function(session, msg = "SAS session through ssh must use tunnels to transfer datasets!") {
-  cfgname <- session$sascfg$SAScfg$SAS_config_names[1]
-  cfg <- session$sascfg$SAScfg[[cfgname]]
-  if (is.null(cfg$tunnel) || is.null(cfg$rtunnel)) {
-    stop(msg)
-  }
-}
-
 #' Validate and Process `data.frame` for SAS
 #'
 #' @description `r lifecycle::badge("experimental")`
@@ -119,7 +100,7 @@ validate_sascfg <- function(sascfg) {
 #' @export
 get_sas_session <- function() {
   if (is.null(.sasr_env$.sas_session)) {
-    .sasr_env$.sas_session <- sas_session_ssh(sascfg = get_sas_cfg())
+    .sasr_env$.sas_session <- sas_session(sascfg = get_sas_cfg())
   }
   if (is.null(.sasr_env$.sas_session)) {
     stop(
@@ -128,26 +109,38 @@ get_sas_session <- function() {
       " accordingly.\n",
       "You can also set the default sas cofiguration file using `options(sascfg = )` ",
       "to allow other files to be used, ",
-      "or use `sas_session_ssh(sascfg =)` to choose the configuration file manually.\n"
+      "or use `sas_session(sascfg =)` to choose the configuration file manually.\n"
     )
   }
   return(.sasr_env$.sas_session)
 }
 
-#' Create SAS ssh Session Based on Configuration File
+#' Create SAS Session Based on Configuration File
 #'
 #' @description `r lifecycle::badge("experimental")`
-#' Create a SAS ssh session.
+#' Create a SAS session.
 #'
 #' @param sascfg (`character`)\cr SAS session configuration.
 #'
 #' @return SAS session.
 #' @export
-sas_session_ssh <- function(sascfg = get_sas_cfg()) {
+sas_session <- function(sascfg = get_sas_cfg()) {
   validate_sascfg(sascfg)
-  sas <- saspy$SASsession(cfgfile = sascfg)
-  .sasr_env$.sas_session <- sas
-  return(sas)
+  session <- saspy$SASsession(cfgfile = sascfg)
+  .sasr_env$.sas_session <- session
+  return(session)
+}
+
+#' Create SAS Session Based on Configuration File
+#' @inherit sas_session
+#' @description `r lifecycle::badge("deprecated")`
+sas_session_ssh <- function(sascfg = get_sas_cfg()) {
+  lifecycle::deprecate_warn(
+    when = "0.1.3",
+    what = "sas_session_ssh()",
+    details = "Please use `sas_session` instead"
+  )
+  sas_session(sascfg)
 }
 
 #' Obtain the SAS Configuration File

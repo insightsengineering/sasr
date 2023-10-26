@@ -37,7 +37,6 @@ run_sas <- function(sas_code, results = c("TEXT", "HTML"), sas_session = get_sas
 #' @return "saspy.sasdata.SASdata" object.
 #' @export
 df2sd <- function(df, table = "_df", libref = "", ..., sas_session = get_sas_session()) {
-  validate_ssh_with_tunnel(sas_session)
   df <- validate_data(df)
   sas_session$df2sd(df, table = table, libref = libref, ...)
 }
@@ -55,6 +54,5 @@ df2sd <- function(df, table = "_df", libref = "", ..., sas_session = get_sas_ses
 #' @return `data.frame` object.
 #' @export
 sd2df <- function(table, libref = "", ..., sas_session = get_sas_session()) {
-  validate_ssh_with_tunnel(sas_session)
   sas_session$sd2df(table = table, libref = libref, ...)
 }

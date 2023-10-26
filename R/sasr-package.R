@@ -7,5 +7,6 @@
 #'
 #' @import reticulate
 #' @import checkmate
+#' @importFrom lifecycle deprecate_warn
 #' @importFrom utils askYesNo
 NULL

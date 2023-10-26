@@ -11,7 +11,7 @@ dummy_session <- list(
   sd2df = function(table, libref, ...) {
     cat(sprintf("obtain SAS dataset %s.%s\n", libref, table))
   },
-  sascfg = list(SAScfg = list(SAS_config_names = "a", a = list(tunnel = 123L, rtunnel = 321L)))
+  sascfg = list(name = "a", mode = "ssh", SAScfg = list(a = list(tunnel = 123L, rtunnel = 321L)))
 )
 
 iris2 <- iris

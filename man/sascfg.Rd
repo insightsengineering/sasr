@@ -41,7 +41,8 @@ Create SAS session configuration file based on argument.
 }
 \details{
 \code{host} and \code{saspath} are required to connect to remote SAS server. Other arguments can follow default.
-If transferring datasets is needed, then tunnelling is required.
+If transferring datasets is needed and the client(running sasr) is not reachable from the server,
+then tunnelling is required.
 Use \verb{tunnel = }, \verb{rtunnel = } to specify tunnels and reverse tunnels.
 The values should be length 1 integer.
 }

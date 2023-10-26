@@ -36,7 +36,7 @@ To use `sasr`, you need to follow these steps
         1. `host` is the hostname of the SAS server.
         1. `saspath` is the SAS executable path on the SAS server.
         1. Other arguments are added to the configuration file directly.
-        1. `tunnel` and `rtunnel` are required if you want to transfer datasets between R and SAS. Use integers like `tunnel = 9999L` in R, or modify `sascfg_personal.py` to make sure they are integers.
+        1. `tunnel` and `rtunnel` are required if you want to transfer datasets between R and SAS if the client (running sasr) is not reachable from the server. Use integers like `tunnel = 9999L` in R, or modify `sascfg_personal.py` to make sure they are integers.
     1. You can create the configuration by yourself and then SAS connection will not be restricted to ssh.
     1. You can have multiple configuration files with different file names
 1. Create the SAS session based on the configuration file
@@ -44,9 +44,9 @@ To use `sasr`, you need to follow these steps
         1. The session will be created if there is no session available stored in `.sasr_env$.sas_session`
         1. If `.sasr_env$.sas_session` is created, this session will be used by default.
         1. Do not create any variable called `.sas_session` in environment `sasr:::.sasr_env`
-    1. To create the session manually, you can call `sas_session_ssh()`
+    1. To create the session manually, you can call `sas_session()`
         1. `SAS_session` have one argument `sascfg`, pointing to the SAS session configuration file.
-    1. To use multiple sessions, you need to store the session `your_session <- sas_session_ssh(sascfg)`
+    1. To use multiple sessions, you need to store the session `your_session <- sas_session(sascfg)`
 1. Transfer the datasets from R to SAS using `df2sd`
     1. Tunneling must be enabled to transfer datasets.
     1. The variable names of the datasets should not contain dots otherwise SAS may not recognize.
