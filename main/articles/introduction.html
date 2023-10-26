@@ -31,7 +31,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">sasr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2.9003</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,16 +52,6 @@
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
-<!-- start dropdown for versions --> <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle"
-          data-bs-toggle="dropdown" role="button"
-          aria-expanded="false" aria-haspopup="true"
-          id="dropdown-versions">Versions</a> <div class="dropdown-menu" aria-labelledby="dropdown-versions"> <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/main">main</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/latest-tag">latest-tag</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/v0.1.2">v0.1.2</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/v0.1.1">v0.1.1</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/sasr/v0.1.0">v0.1.0</a> </div></li>
-<!-- end dropdown for versions -->
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -107,7 +97,7 @@ as backend.</p>
 <h2 id="documentations">Documentations<a class="anchor" aria-label="anchor" href="#documentations"></a>
 </h2>
 <p>For functionality wrapped in <code>sasr</code>, you can find the
-documentations through R documentation system, or through online <a href="https://insightsengineering.github.io/sasr/latest-tag/" class="external-link">documentation
+documentations through R documentation system, or through online <a href="https://insightsengineering.github.io/sasr/latest-tag/">documentation
 page</a>. However, there can be some other arguments not documented(in
 <code>...</code>), and these arguments are described in
 <code>saspy</code> <a href="https://sassoftware.github.io/saspy/" class="external-link">documentation page</a>.</p>
@@ -139,7 +129,8 @@ server.</li>
 <li>Other arguments are added to the configuration file directly.</li>
 <li>
 <code>tunnel</code> and <code>rtunnel</code> are required if you
-want to transfer datasets between R and SAS. Use integers like
+want to transfer datasets between R and SAS if the client (running sasr)
+is not reachable from the server. Use integers like
 <code>tunnel = 9999L</code> in R, or modify
 <code>sascfg_personal.py</code> to make sure they are integers.</li>
 </ol>
@@ -167,7 +158,7 @@ environment <code>sasr:::.sasr_env</code>
 </ol>
 </li>
 <li>To create the session manually, you can call
-<code><a href="../reference/sas_session_ssh.html">sas_session_ssh()</a></code>
+<code><a href="../reference/sas_session.html">sas_session()</a></code>
 <ol style="list-style-type: decimal">
 <li>
 <code>SAS_session</code> have one argument <code>sascfg</code>,
@@ -175,7 +166,7 @@ pointing to the SAS session configuration file.</li>
 </ol>
 </li>
 <li>To use multiple sessions, you need to store the session
-<code>your_session &lt;- sas_session_ssh(sascfg)</code>
+<code>your_session &lt;- sas_session(sascfg)</code>
 </li>
 </ol>
 </li>
