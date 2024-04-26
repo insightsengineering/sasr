@@ -28,6 +28,7 @@ repos:
           (.*/|)\.Rbuildignore|
           (.*/|)\.lintr|
           (.*/|)_pkgdown.y[a]?ml|
+          (.*/|)\.covrignore|
           (.*/|)staged_dependencies.y[a]?ml|
           (.*/|)\.pre-commit-.*|
           \.github/.*|
