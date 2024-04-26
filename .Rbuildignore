@@ -21,3 +21,5 @@ __pycache__
 design
 sascfg_personal\.py
 ^pkgdown$
+^revdeprefs\.yaml$
+^revdep$
