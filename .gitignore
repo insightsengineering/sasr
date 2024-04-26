@@ -34,3 +34,5 @@ package-lock.json
 package.json
 __pycache__
 sascfg_personal.py
+tests/testthat/_snaps/**/*.new.md
+tests/testthat/_snaps/**/*.new.svg
