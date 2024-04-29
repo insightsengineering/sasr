@@ -2,8 +2,8 @@
 % Please edit documentation in R/sasr-package.R
 \docType{package}
 \name{sasr-package}
+\alias{sasr}
 \alias{sasr-package}
-\alias{_PACKAGE}
 \title{\code{sasr} Package}
 \description{
 \code{sasr} provides interface to SAS through \code{saspy} and \code{reticulate} in R.
@@ -12,6 +12,7 @@
 Useful links:
 \itemize{
   \item \url{https://github.com/insightsengineering/sasr/}
+  \item \url{https://insightsengineering.github.io/sasr/latest-tag/}
   \item Report bugs at \url{https://github.com/insightsengineering/sasr/issues}
 }
 
