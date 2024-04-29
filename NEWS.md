@@ -1,5 +1,7 @@
 # sasr 0.1.2.9006
 
+* Add a basic SAS engine for knitr.
+
 # sasr 0.1.2
 
 * First CRAN version of the package.
