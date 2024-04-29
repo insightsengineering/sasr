@@ -1,5 +1,8 @@
 # sasr 0.1.2.9006
 
+* Update `sas_session` to allow finer control over the sas session.
+* The argument `sascfg` has been replaced by `cfgfile` in `sas_session`.
+
 # sasr 0.1.2
 
 * First CRAN version of the package.
