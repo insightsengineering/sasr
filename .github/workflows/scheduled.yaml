@@ -1,0 +1,34 @@
+---
+name: On-demand 🧑‍🔬
+
+on:
+  schedule:
+    - cron: '45 3 * * 0'
+  workflow_dispatch:
+
+jobs:
+  dependency-test:
+    strategy:
+      fail-fast: false
+      matrix:
+        test-strategy: ["min_cohort", "min_isolated", "release", "max"]
+    uses: insightsengineering/r.pkg.template/.github/workflows/verdepcheck.yaml@main
+    name: Dependency Test - ${{ matrix.test-strategy }} 🔢
+    secrets:
+      REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
+      GCHAT_WEBHOOK: ${{ secrets.GCHAT_WEBHOOK }}
+    with:
+      strategy: ${{ matrix.test-strategy }}
+      additional-env-vars: |
+        PKG_SYSREQS_DRY_RUN=true
+  branch-cleanup:
+    name: Branch Cleanup 🧹
+    uses: insightsengineering/r.pkg.template/.github/workflows/branch-cleanup.yaml@main
+    secrets:
+      REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
+  revdepcheck:
+    name: revdepcheck ↩️
+    uses: insightsengineering/r.pkg.template/.github/workflows/revdepcheck.yaml@main
+  rhub:
+    name: R-hub 🌐
+    uses: insightsengineering/r.pkg.template/.github/workflows/rhub.yaml@main
