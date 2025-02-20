@@ -1,8 +1,8 @@
 Type: Package
 Package: sasr
 Title: 'SAS' Interface
-Version: 0.1.2.9006
-Date: 2024-04-29
+Version: 0.1.2.9009
+Date: 2024-09-16
 Authors@R: c(
     person("Liming", "Li", , "liming.li@roche.com", role = c("aut", "cre")),
     person("Daniel", "Sabanes Bove", , "daniel.sabanes_bove@roche.com", role = "aut"),
@@ -41,4 +41,4 @@ Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
