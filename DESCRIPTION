@@ -1,8 +1,8 @@
 Type: Package
 Package: sasr
 Title: 'SAS' Interface
-Version: 0.1.2.9009
-Date: 2024-09-16
+Version: 0.1.2.9010
+Date: 2025-02-20
 Authors@R: c(
     person("Liming", "Li", , "liming.li@roche.com", role = c("aut", "cre")),
     person("Daniel", "Sabanes Bove", , "daniel.sabanes_bove@roche.com", role = "aut"),
