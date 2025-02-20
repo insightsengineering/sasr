@@ -6,6 +6,9 @@
 \usage{
 sas_session_ssh(sascfg = get_sas_cfg())
 }
+\arguments{
+\item{sascfg}{(\code{string})\cr SAS session configuration.}
+}
 \value{
 SAS session.
 }

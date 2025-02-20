@@ -120,13 +120,13 @@ get_sas_session <- function() {
 #' @description `r lifecycle::badge("experimental")`
 #' Create a SAS session.
 #'
-#' @param cfgfile (`string`)\cr SAS session configuration.
+#' @param sascfg (`string`)\cr SAS session configuration.
 #' @param ... additional arguments passed to `saspy.SASsession()`.
 #' Can override the configuration file.
 #'
 #' @return SAS session.
 #' @export
-sas_session <- function(cfgfile = get_sas_cfg(), ...) {
+sas_session <- function(sascfg = get_sas_cfg(), ...) {
   validate_sascfg(sascfg)
   session <- saspy$SASsession(cfgfile = sascfg, ...)
   .sasr_env$.sas_session <- session
