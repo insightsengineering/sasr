@@ -142,7 +142,7 @@ sas_session_ssh <- function(sascfg = get_sas_cfg(), ...) {
     what = "sas_session_ssh()",
     details = "Please use `sas_session` instead"
   )
-  sas_session(sascfg, ...)
+  sas_session(sascfg = sascfg, ...)
 }
 
 #' Obtain the SAS Configuration File
