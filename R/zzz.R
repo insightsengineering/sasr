@@ -14,4 +14,7 @@ saspy <- NULL
 .onLoad <- function(libname, pkgname) {
   options("sascfg" = "sascfg_personal.py")
   saspy <<- import("saspy", delay_load = TRUE)
+  if (require("knitr", quietly = TRUE)) {
+    knitr::knit_engines$set(sas = sas_engine)
+  }
 }
