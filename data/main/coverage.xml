@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.774193548387097" branch-rate="0" lines-covered="72" lines-valid="93" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-02-20 13:29:58.295128">
+<coverage line-rate="0.782608695652174" branch-rate="0" lines-covered="72" lines-valid="92" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-02-20 14:00:06.342882">
   <sources>
     <source>/__w/sasr/sasr/sasr</source>
   </sources>
   <packages>
-    <package name="sasr" line-rate="0.774193548387097" branch-rate="0" complexity="0">
+    <package name="sasr" line-rate="0.782608695652174" branch-rate="0" complexity="0">
       <classes>
         <class name="run_sas.R" filename="R/run_sas.R" line-rate="1" branch-rate="0" complexity="0">
           <methods>
@@ -76,7 +76,6 @@
                 <line number="30" hits="0" branch="false"/>
                 <line number="31" hits="0" branch="false"/>
                 <line number="32" hits="0" branch="false"/>
-                <line number="33" hits="0" branch="false"/>
               </lines>
             </method>
           </methods>
@@ -88,7 +87,6 @@
             <line number="30" hits="0" branch="false"/>
             <line number="31" hits="0" branch="false"/>
             <line number="32" hits="0" branch="false"/>
-            <line number="33" hits="0" branch="false"/>
           </lines>
         </class>
         <class name="utils.R" filename="R/utils.R" line-rate="0.893939393939394" branch-rate="0" complexity="0">
