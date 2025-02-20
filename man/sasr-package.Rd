@@ -18,11 +18,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Liming Li \email{liming.li@roche.com}
+\strong{Maintainer}: Liming Li \email{clark.liming@google.com}
 
 Authors:
 \itemize{
-  \item Daniel Sabanes Bove \email{daniel.sabanes_bove@roche.com}
+  \item Daniel Sabanes Bove \email{daniel.sabanesbove@gmail.com}
   \item Isaac Gravestock \email{isaac.gravestock@roche.com}
 }
 
