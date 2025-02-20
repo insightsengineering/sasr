@@ -1,6 +1,9 @@
 #' SAS engine function
 #' @param options See knitr documentation on engines.
 sas_engine <- function(options) {
+  if (!requireNamespace("knitr", quietly = TRUE)) {
+    stop("Please install knitr to use the SAS engine.")
+  }
   if (options$eval) {
     ret <- sasr::run_sas(paste0(options$code, collapse = "\n"), results = "HTML")
     if (identical(ret$LST, "")) {
@@ -13,5 +16,5 @@ sas_engine <- function(options) {
     output <- NULL
   }
   options$results <- "asis"
-  engine_output(options, code = options$code, out = output)
+  knitr::engine_output(options, code = options$code, out = output)
 }
