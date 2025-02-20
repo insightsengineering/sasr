@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   introduction: introduction.html
-last_built: 2025-02-20T13:29Z
+last_built: 2025-02-20T14:00Z
 urls:
   reference: https://insightsengineering.github.io/sasr/reference
   article: https://insightsengineering.github.io/sasr/articles
