@@ -120,13 +120,15 @@ get_sas_session <- function() {
 #' @description `r lifecycle::badge("experimental")`
 #' Create a SAS session.
 #'
-#' @param sascfg (`character`)\cr SAS session configuration.
+#' @param sascfg (`string`)\cr SAS session configuration.
+#' @param ... additional arguments passed to `saspy.SASsession()`.
+#' Can override the configuration file.
 #'
 #' @return SAS session.
 #' @export
-sas_session <- function(sascfg = get_sas_cfg()) {
+sas_session <- function(sascfg = get_sas_cfg(), ...) {
   validate_sascfg(sascfg)
-  session <- saspy$SASsession(cfgfile = sascfg)
+  session <- saspy$SASsession(cfgfile = sascfg, ...)
   .sasr_env$.sas_session <- session
   return(session)
 }
@@ -134,13 +136,13 @@ sas_session <- function(sascfg = get_sas_cfg()) {
 #' Create SAS Session Based on Configuration File
 #' @inherit sas_session
 #' @description `r lifecycle::badge("deprecated")`
-sas_session_ssh <- function(sascfg = get_sas_cfg()) {
+sas_session_ssh <- function(sascfg = get_sas_cfg(), ...) {
   lifecycle::deprecate_warn(
     when = "0.1.3",
     what = "sas_session_ssh()",
     details = "Please use `sas_session` instead"
   )
-  sas_session(sascfg)
+  sas_session(sascfg = sascfg, ...)
 }
 
 #' Obtain the SAS Configuration File

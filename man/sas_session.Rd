@@ -4,10 +4,13 @@
 \alias{sas_session}
 \title{Create SAS Session Based on Configuration File}
 \usage{
-sas_session(sascfg = get_sas_cfg())
+sas_session(sascfg = get_sas_cfg(), ...)
 }
 \arguments{
-\item{sascfg}{(\code{character})\cr SAS session configuration.}
+\item{sascfg}{(\code{string})\cr SAS session configuration.}
+
+\item{...}{additional arguments passed to \code{saspy.SASsession()}.
+Can override the configuration file.}
 }
 \value{
 SAS session.
