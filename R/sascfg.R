@@ -25,7 +25,6 @@ sascfg <- function(name = "default", host, saspath, ssh = system("which ssh", in
                    encoding = "latin1", options = list("-fullstimer"), ..., sascfg = "sascfg_personal.py") {
   lst <- list(host = host, saspath = saspath, ssh = ssh, encoding = encoding, options = options)
   lst <- c(lst, list(...))
-  check_list(lst, types = c("character", "integer"), names = "named")
   f <- file(sascfg, "w")
   writeLines(sprintf("SAS_config_names=['%s']", name), con = f)
   writeLines(sprintf("%s=%s", name, toString(r_to_py(lst))), f)
