@@ -1,4 +1,4 @@
-# sasr 0.1.3
+# sasr 0.1.4
 
 * Add a basic SAS engine for knitr.
 * Update `sas_session` to allow finer control over the sas session.
