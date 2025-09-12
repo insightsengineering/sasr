@@ -1,13 +1,14 @@
 Type: Package
 Package: sasr
 Title: 'SAS' Interface
-Version: 0.1.4.9000
+Version: 0.1.5
 Date: 2025-03-30
 Authors@R: c(
-    person("Liming", "Li", , "clark.liming@gmail.com", role = c("aut", "cre")),
+    person("Liming", "Li", , "liming.li1@astrazeneca.com", role = c("aut", "cre")),
     person("Daniel", "Sabanes Bove", , "daniel.sabanesbove@gmail.com", role = "aut"),
     person("Isaac", "Gravestock", , "isaac.gravestock@roche.com", role = "aut"),
-    person("F. Hoffmann-La Roche AG", role = c("cph", "fnd"))
+    person("F. Hoffmann-La Roche AG", role = c("cph", "fnd")),
+    person("AstraZeneca plc", role = c("cph", "fnd"))
   )
 Description: Provides a 'SAS' interface, through
     'SASPy'(<https://sassoftware.github.io/saspy/>) and

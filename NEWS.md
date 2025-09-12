@@ -1,4 +1,6 @@
-# sasr 0.1.4.9000
+# sasr 0.1.5
+
+* Fix a unit test issue on CRAN.
 
 # sasr 0.1.4
 

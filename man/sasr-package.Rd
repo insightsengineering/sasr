@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Liming Li \email{clark.liming@gmail.com}
+\strong{Maintainer}: Liming Li \email{liming.li1@astrazeneca.com}
 
 Authors:
 \itemize{
@@ -29,6 +29,7 @@ Authors:
 Other contributors:
 \itemize{
   \item F. Hoffmann-La Roche AG [copyright holder, funder]
+  \item AstraZeneca plc [copyright holder, funder]
 }
 
 }
